@@ -1,0 +1,6 @@
+.bottom-right {
+  position: absolute;
+  right: 3%;
+  bottom: 20px;
+  z-index: 1;
+}

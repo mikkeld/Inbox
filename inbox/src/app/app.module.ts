@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { InboxComponent } from './inbox/inbox.component';
 
 import { AppRoutingModule }     from './app-routing.module';
+import { ComposeComponent } from './compose/compose.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InboxComponent
+    InboxComponent,
+    ComposeComponent
   ],
   imports: [
     BrowserModule,

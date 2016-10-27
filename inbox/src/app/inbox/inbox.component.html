@@ -1,3 +1,18 @@
-<p>
-  inbox works!
-</p>
+<ul class="demo-list-three mdl-list">
+  <li *ngFor="let email of emails" class="mdl-list__item mdl-list__item--three-line">
+    <span class="mdl-list__item-primary-content" [style.font-weight]="!email.read ? 'bold' : 'normal'">
+      <i class="material-icons mdl-list__item-avatar">person</i>
+      <span>{{ email.title }}</span>
+      <span><small>{{ email.date | date }}</small></span>
+      <span class="mdl-list__item-text-body">
+        {{ email.content }}
+      </span>
+    </span>
+    <span class="mdl-list__item-secondary-content">
+      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">{{email.starred ? 'star' : 'star_border' }}</i></a>
+    </span>
+  </li>
+</ul>
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bottom-right">
+  <i class="material-icons">add</i>
+</button>

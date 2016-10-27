@@ -1,3 +1,20 @@
-<p>
-  compose works!
-</p>
+<div class="email-form">
+  <form #composeForm="ngForm" (ngSubmit)="sendEmail(composeForm.value)">
+    <div class="mdl-textfield mdl-js-textfield">
+      <input ngModel required #receiverRef="ngModel" class="mdl-textfield__input" type="text" id="receiver" name="receiver">
+      <label class="mdl-textfield__label" for="receiver">Receiver...</label>
+    </div>
+    <!--<div *ngIf="receiverRef.errors?.required">This field is required</div>-->
+    <div class="mdl-textfield mdl-js-textfield">
+      <input ngModel class="mdl-textfield__input" type="text" id="title" name="title">
+      <label class="mdl-textfield__label" for="title">Title...</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield">
+      <textarea ngModel class="mdl-textfield__input" type="text" rows= "3" id="content" name="content"></textarea>
+      <label class="mdl-textfield__label" for="content">Write email...</label>
+    </div>
+    <button [disabled]="!composeForm.valid" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      Send email
+    </button>
+  </form>
+</div>

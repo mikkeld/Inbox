@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Email } from '../email';
 import { Person } from '../person';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inbox',
@@ -9,9 +10,9 @@ import { Person } from '../person';
 })
 export class InboxComponent implements OnInit {
 
-  emails: Email[];
+  public emails: Email[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     let sender = new Person(123, "Mikkel", "Dengsøe", "/img", "happy");
@@ -20,6 +21,11 @@ export class InboxComponent implements OnInit {
       new Email(receiver, sender, 1477562806, "This is my first email", "This is my title"),
       new Email(sender, receiver, 1477562806, "This is my second email", "This is my title", true, true)
     ]
+  }
+
+  public linkToCompose(): void {
+    const link = ['compose'];
+    this.router.navigate(link);
   }
 
 }

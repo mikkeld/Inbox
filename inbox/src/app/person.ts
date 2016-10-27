@@ -1,5 +1,11 @@
 export class Person {
-  constructor(authId: int, firstName: string, lastName: string, profilePicturePath: string, happiness: string) {
+  authId: number;
+  firstName: string;
+  lastName: string;
+  profilePicturePath: string;
+  happiness: string;
+
+  constructor(authId: number, firstName: string, lastName: string, profilePicturePath: string, happiness: string) {
     this.authId=  authId;
     this.firstName = firstName;
     this.lastName = lastName;

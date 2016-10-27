@@ -1,7 +1,14 @@
-import { Person } from './person.ts'
+import { Person } from './person';
 
 export class Email {
-  constructor(receiver: Person, sender: Person, date: Date, content: string, title: string) {
+
+  receiver: Person;
+  sender: Person;
+  date: number;
+  content: string;
+  title: string;
+
+  constructor(receiver: Person, sender: Person, date: number, content: string, title: string) {
     this.receiver = receiver;
     this.sender = sender;
     this.date = date;
@@ -9,7 +16,7 @@ export class Email {
     this.title = title;
   }
 
-  timeSinceReceived(): DateTimeFormat {
+  timeSinceReceived(): number {
     return Date.now() - this.date;
   }
 }

@@ -7,17 +7,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
 
-  constructor(private af: AngularFire) {
-    const allUsersPath = this.af.database.list('/users')
-  }
-
-  private allUIDs: string[];
+  constructor(private af: AngularFire) { }
 
   public login() {
     this.af.auth.login()
-      .then(() => {
-        console.log("user logged in");
-        this.af.auth.subscribe(res => {console.log(res)})
+      .then((user) => {
+        this.saveUser(new Person(user.auth.uid, user.auth.displayName, user.auth.displayName, user.auth.photoURL, "happy"))
       });
   }
 
@@ -37,20 +32,15 @@ export class AuthService {
     });
   }
 
-  // private firstLogin(person: Person): boolean {
-  //
-  // }
-  //
-  // private getAllUIDs(): string[] {
-  //   this.allUsersPath.subscribe(users => {
-  //     this.allUIDs = users.map(user => {
-  //       return user.authId;
-  //     });
-  //   })
-  // }
-  //
-  // private createUser(person: Person): void {
-  //
-  // }
+ private saveUser(person: Person): void {
+    const userPath = this.af.database.object(`/users/${person.authId}`);
+    userPath.set({
+      authId: person.authId,
+      firstName: person.firstName,
+      lastName: person.lastName,
+      profilePicturePath: person.profilePicturePath,
+      happiness: person.happiness
+    })
+  }
 
 }

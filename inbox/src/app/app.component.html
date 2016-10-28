@@ -13,6 +13,24 @@
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
       </nav>
+
+      <!-- Show logged in or logged out UI -->
+      <button (click)="login()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+        Login
+      </button>
+
+      <div *ngIf="!currentUser">
+        <button (click)="login()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          Login
+        </button>
+      </div>
+      <div *ngIf="currentUser">
+        <img id="user-pic" [src]="(currentUser | async)?.profilePicturePath">
+        <button (click)="logout()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          Logout
+        </button>
+      </div>
+
     </div>
   </header>
   <div class="mdl-layout__drawer">

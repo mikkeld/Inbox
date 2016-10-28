@@ -9,8 +9,9 @@ export class Email {
   title: string;
   read: boolean;
   starred: boolean;
+  $key: string;
 
-  constructor(receiver: Person, sender: Person, date: number, content: string, title: string, read = false, starred = false) {
+  constructor(receiver: Person, sender: Person, date: number, content: string, title: string, read = false, starred = false, $key?: string) {
     this.receiver = receiver;
     this.sender = sender;
     this.date = date;
@@ -18,6 +19,7 @@ export class Email {
     this.title = title;
     this.read = read;
     this.starred = starred;
+    this.$key = $key;
   }
 
   timeSinceReceived(): number {

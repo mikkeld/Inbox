@@ -4,6 +4,7 @@ import { Person } from '../person';
 import { Router } from '@angular/router';
 import {FirebaseListObservable} from "angularfire2";
 import {EmailService} from "../email/email.service";
+import {AuthService} from "../auth/auth.service";
 
 @Component({
   selector: 'app-inbox',
@@ -16,17 +17,11 @@ export class InboxComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private emailService: EmailService
+    private emailService: EmailService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
-    // let sender = new Person(123, "Mikkel", "Dengsøe", "/img", "happy");
-    // let receiver = new Person(234, "Gizem", "Uygun", "/img", "happy");
-    // this.emails = [
-    //   new Email(receiver, sender, 1477562806, "This is my first email", "This is my title"),
-    //   new Email(sender, receiver, 1477562806, "This is my second email", "This is my title", true, true)
-    // ];
-
     this.getAllEmails();
   }
 
@@ -35,8 +30,11 @@ export class InboxComponent implements OnInit {
     this.router.navigate(link);
   }
 
-  getAllEmails(): void {
-    console.log("should get all emails");
+  public markAsImportant(email: Email): void {
+    this.emailService.markAsImportant(email);
+  }
+
+  private getAllEmails(): void {
     this.emailService.getAllEmails()
       .subscribe(emails => {
         this.emails = emails;

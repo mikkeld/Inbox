@@ -21,7 +21,7 @@ export class ComposeComponent implements OnInit {
   ngOnInit() { }
 
   sendEmail(emailForm: any): void {
-    let receiver = new Person(123, "Mikkel", "Dengsoe", "/img", "Happy");
+    let receiver = new Person("Imf4nFal01MofFYqOe9I8LcfhX22", "Mikkel", "Dengsoe", "/img", "Happy");
     let email = new Email(receiver, receiver, Date.now(), emailForm.content, emailForm.title);
     this.emailService.composeEmail(email).then(() => {
       console.log("Email sent succesfully");

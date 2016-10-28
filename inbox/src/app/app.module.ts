@@ -12,6 +12,7 @@ import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { ComposeComponent } from './compose/compose.component';
 import {EmailService} from "./email/email.service";
 import {AuthService} from "./auth/auth.service";
+import { EmailDetailComponent } from './email-detail/email-detail.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -22,14 +23,15 @@ export const firebaseConfig = {
 
 const myFirebaseAuthConfig = {
   provider: AuthProviders.Google,
-  method: AuthMethods.Redirect
+  method: AuthMethods.Popup
 };
 
 @NgModule({
   declarations: [
     AppComponent,
     InboxComponent,
-    ComposeComponent
+    ComposeComponent,
+    EmailDetailComponent
   ],
   imports: [
     BrowserModule,

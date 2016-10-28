@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { Observable } from 'rxjs';
 import { Person } from './person';
+import { EmailService } from './email/email.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,21 @@ import { Person } from './person';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private emailService: EmailService
+  ) { }
+
+  unreadEmailCount: number;
 
   currentUser: Observable<Person>;
 
   ngOnInit() {
     this.currentUser = this.authService.getUserInformation();
+    this.emailService.unreadEmailCount()
+      .subscribe(unreadEmails => {
+        this.unreadEmailCount = unreadEmails.length;
+      })
   }
 
   login() {

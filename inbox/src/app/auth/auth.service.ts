@@ -14,11 +14,10 @@ export class AuthService {
   private allUIDs: string[];
 
   public login() {
-    var me = this;
     this.af.auth.login()
       .then(() => {
         console.log("user logged in");
-        console.log(me.af.auth)
+        this.af.auth.subscribe(res => {console.log(res)})
       });
   }
 

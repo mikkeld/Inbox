@@ -1,5 +1,5 @@
 <ul class="demo-list-three mdl-list">
-  <li *ngFor="let email of emails" class="mdl-list__item mdl-list__item--three-line">
+  <li *ngFor="let email of emails" class="mdl-list__item mdl-list__item--three-line" (click)="gotoDetail(email)">
     <span class="mdl-list__item-primary-content" [style.font-weight]="!email.read ? 'bold' : 'normal'">
       <i class="material-icons mdl-list__item-avatar">person</i>
       <span>{{ email.title }}</span>

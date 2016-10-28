@@ -41,4 +41,9 @@ export class InboxComponent implements OnInit {
       })
   }
 
+  public gotoDetail(email: Email): void {
+    this.emailService.markAsRead(email);
+    this.router.navigate(['/email', email.$key]);
+  }
+
 }

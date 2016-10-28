@@ -10,6 +10,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AngularFireModule } from 'angularfire2';
 // import { Config } from '../../config';
 import { ComposeComponent } from './compose/compose.component';
+import {EmailService} from "./email/email.service";
 
 // export const firebaseConfig = {
 //   apiKey: config.apiKey,
@@ -38,7 +39,7 @@ export const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,7 +13,7 @@ export class AuthService {
   public login() {
     this.af.auth.login()
       .then((user) => {
-        this.saveUser(new Person(user.auth.uid, user.auth.displayName, user.auth.displayName, user.auth.photoURL, "happy"))
+        this.saveUser(new Person(user.auth.uid, user.auth.displayName, user.auth.displayName, user.auth.photoURL))
       });
   }
 
@@ -33,15 +33,16 @@ export class AuthService {
     });
   }
 
- private saveUser(person: Person): void {
+  private saveUser(person: Person): void {
     const userPath = this.af.database.object(`/users/${person.authId}`);
     userPath.set({
       authId: person.authId,
       firstName: person.firstName,
       lastName: person.lastName,
-      profilePicturePath: person.profilePicturePath,
-      happiness: person.happiness
+      profilePicturePath: person.profilePicturePath
     })
   }
 
 }
+
+

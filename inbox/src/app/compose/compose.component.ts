@@ -41,11 +41,11 @@ export class ComposeComponent implements OnInit {
   }
 
   sendEmail(emailForm: any): void {
-    let email = new Email(this.receiver, this.receiver, Date.now(), emailForm.content, emailForm.title);
-    console.log(email);
-    // this.emailService.composeEmail(email);
-    // let inbox = ['inbox'];
-    // this.router.navigate(inbox);
+    let receiver = new Person(this.receiver.authId, this.receiver.firstName, this.receiver.lastName, this.receiver.profilePicturePath)
+    let email = new Email(receiver, receiver, Date.now(), emailForm.content, emailForm.title);
+    this.emailService.composeEmail(email);
+    let inbox = ['inbox'];
+    this.router.navigate(inbox);
   }
 
   search(term: string): void {

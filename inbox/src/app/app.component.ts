@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   ) { }
 
   unreadEmailCount: Observable<number>;
-
   currentUser: Observable<Person>;
 
   ngOnInit() {

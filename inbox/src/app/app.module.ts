@@ -13,6 +13,7 @@ import { ComposeComponent } from './compose/compose.component';
 import {EmailService} from "./email/email.service";
 import {AuthService} from "./auth/auth.service";
 import { EmailDetailComponent } from './email-detail/email-detail.component';
+import { UserSearchComponent } from './user-search/user-search.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -31,7 +32,8 @@ const myFirebaseAuthConfig = {
     AppComponent,
     InboxComponent,
     ComposeComponent,
-    EmailDetailComponent
+    EmailDetailComponent,
+    UserSearchComponent
   ],
   imports: [
     BrowserModule,

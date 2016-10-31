@@ -3,22 +3,18 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
+      <span class="mdl-layout-title"><i class="material-icons title-icon">supervisor_account</i> MikMail</span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="">Inbox</a>
-        <a class="mdl-navigation__link" href="">Send</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-      </nav>
+      <!--<nav class="mdl-navigation mdl-layout&#45;&#45;large-screen-only">-->
+        <!--<a class="mdl-navigation__link" href="">Inbox</a>-->
+        <!--<a class="mdl-navigation__link" href="">Send</a>-->
+        <!--<a class="mdl-navigation__link" href="">Link</a>-->
+        <!--<a class="mdl-navigation__link" href="">Link</a>-->
+      <!--</nav>-->
 
       <!-- Show logged in or logged out UI -->
-      <button (click)="login()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-        Login
-      </button>
-
       <div *ngIf="!currentUser">
         <button (click)="login()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           Login
@@ -26,19 +22,26 @@
       </div>
       <div *ngIf="currentUser">
         <img id="user-pic" [src]="(currentUser | async)?.profilePicturePath">
-        <button (click)="logout()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          Logout
+        <button id="demo-menu-lower-right"
+                class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">more_vert</i>
         </button>
+
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for="demo-menu-lower-right">
+          <li (click)="logout()" class="mdl-menu__item">Logout</li>
+          <li class="mdl-menu__item">Profile</li>
+        </ul>
       </div>
 
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
+    <span class="mdl-layout-title">MikMail</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href=""><span class="mdl-badge" [attr.data-badge]="unreadEmailCount">Inbox</span></a>
+      <a class="mdl-navigation__link" href=""><span class="mdl-badge" [attr.data-badge]="unreadEmailCount | async">Inbox</span></a>
       <a class="mdl-navigation__link" href="">Send</a>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Starred</a>
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>

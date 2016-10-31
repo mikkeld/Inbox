@@ -3,6 +3,7 @@ import { AngularFire } from 'angularfire2';
 import { Person } from '../person';
 import { Observable }        from 'rxjs';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthService {
@@ -24,10 +25,10 @@ export class AuthService {
   public getUserInformation(): Observable<Person> {
     return this.af.auth.map(authInfo => {
       return new Person(
-        authInfo.google.uid,
-        authInfo.google.displayName,
-        authInfo.google.displayName,
-        authInfo.google.photoURL
+        authInfo.auth.uid,
+        authInfo.auth.displayName,
+        authInfo.auth.displayName,
+        authInfo.auth.photoURL
       )
     });
   }

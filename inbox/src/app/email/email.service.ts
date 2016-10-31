@@ -8,37 +8,48 @@ import {BaseService} from "./base.service";
 export class EmailService {
 
   constructor(
-    private af: AngularFire
+    private af: AngularFire,
+    private authService: AuthService
   ) { }
 
-  composeEmail(email: Email): Promise<Email> {
-    return Promise.resolve(this.af.database.list(`/emails/${email.receiver.authId}`).push(email));
+  composeEmail(email: Email): void {
+    this.af.database.list(`/emails/${email.receiver.authId}`).push(email);
   }
 
-  getAllEmails(): FirebaseListObservable<any> {
-    return this.af.database.list('/emails/Imf4nFal01MofFYqOe9I8LcfhX22');
+  getAllEmails(): any {
+    return this.authService.getUserInformation()
+      .switchMap(user => {
+        return this.af.database.list(`/emails/${user.authId}`);
+      });
   }
 
-  getEmail(key: string): FirebaseObjectObservable<any> {
-    return this.af.database.object(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`);
+  getEmail(key: string): any {
+    return this.authService.getUserInformation()
+      .switchMap(user => {
+        return this.af.database.object(`emails/${user.authId}/${key}`)
+      })
   }
 
-  markAsImportant(email: Email): void {
-    this.af.database.object(`emails/${email.receiver.authId}/${email.$key}`).update({ starred: !email.starred })
+  markAsImportant(email: Email, $key: string): void {
+    this.af.database.object(`emails/${email.receiver.authId}/${$key}`).update({ starred: !email.starred })
   }
 
-  markAsRead(email: Email): void {
-    this.af.database.object(`emails/${email.receiver.authId}/${email.$key}`).update({ read: true })
+  markAsRead(email: Email, $key: string): void {
+    this.af.database.object(`emails/${email.receiver.authId}/${$key}`).update({ read: true })
   }
 
-  unreadEmailCount(): FirebaseListObservable<any> {
-    return this.af.database.list(`emails/Imf4nFal01MofFYqOe9I8LcfhX22`, {
-      query: {
-        orderByChild: 'read',
-        equalTo: false
-      }
-    })
-
+  unreadEmailCount(): any {
+    return this.authService.getUserInformation()
+      .switchMap(user => {
+        return this.af.database.list(`emails/${user.authId}`, {
+          query: {
+            orderByChild: 'read',
+            equalTo: false
+          }
+        })
+      }).map(unreadEmails => {
+        return unreadEmails.length;
+      })
   }
 
 }

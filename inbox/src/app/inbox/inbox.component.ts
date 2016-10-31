@@ -13,7 +13,7 @@ import {AuthService} from "../auth/auth.service";
 })
 export class InboxComponent implements OnInit {
 
-  public emails: Email[];
+  public emails: FirebaseListObservable<any>;
 
   constructor(
     private router: Router,
@@ -22,7 +22,7 @@ export class InboxComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getAllEmails();
+    this.emails = this.emailService.getAllEmails();
   }
 
   public linkToCompose(): void {
@@ -30,20 +30,13 @@ export class InboxComponent implements OnInit {
     this.router.navigate(link);
   }
 
-  public markAsImportant(email: Email): void {
-    this.emailService.markAsImportant(email);
+  public markAsImportant(email: Email, $key: string): void {
+    this.emailService.markAsImportant(email, $key);
   }
 
-  private getAllEmails(): void {
-    this.emailService.getAllEmails()
-      .subscribe(emails => {
-        this.emails = emails;
-      })
-  }
-
-  public gotoDetail(email: Email): void {
-    this.emailService.markAsRead(email);
-    this.router.navigate(['/email', email.$key]);
+  public gotoDetail(email: Email, $key:string): void {
+    this.emailService.markAsRead(email, $key);
+    this.router.navigate(['/email', $key]);
   }
 
 }

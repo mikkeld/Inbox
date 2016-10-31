@@ -16,16 +16,13 @@ export class AppComponent implements OnInit {
     private emailService: EmailService
   ) { }
 
-  unreadEmailCount: number;
+  unreadEmailCount: Observable<number>;
 
   currentUser: Observable<Person>;
 
   ngOnInit() {
     this.currentUser = this.authService.getUserInformation();
-    this.emailService.unreadEmailCount()
-      .subscribe(unreadEmails => {
-        this.unreadEmailCount = unreadEmails.length;
-      })
+    this.unreadEmailCount = this.emailService.unreadEmailCount();
   }
 
   login() {

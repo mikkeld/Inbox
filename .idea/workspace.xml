@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71050d13-0a48-4cb2-a188-20471397e7ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/app.component.ts" afterPath="$PROJECT_DIR$/inbox/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/auth/auth.service.ts" afterPath="$PROJECT_DIR$/inbox/src/app/auth/auth.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/compose/compose.component.ts" afterPath="$PROJECT_DIR$/inbox/src/app/compose/compose.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/person.ts" afterPath="$PROJECT_DIR$/inbox/src/app/person.ts" />
-    </list>
+    <list default="true" id="71050d13-0a48-4cb2-a188-20471397e7ca" name="Default" comment="" />
     <ignored path="Inbox.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,6 +23,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="email.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inbox/src/app/email/email.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+                <marker date="1477931820000" expanded="true" signature="437:1557" ph="..." />
+                <marker date="1477931820000" expanded="true" signature="540:696" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inbox/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inbox/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="375">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -426,12 +435,12 @@
       <workItem from="1477669048303" duration="7744000" />
       <workItem from="1477684021242" duration="3885000" />
       <workItem from="1477921871582" duration="4609000" />
-      <workItem from="1477927021143" duration="9528000" />
+      <workItem from="1477927021143" duration="11425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57423000" />
+    <option name="totallyTimeSpent" value="59320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1421" height="797" extended-state="0" />
@@ -808,18 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/email/email.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <marker date="1477931820000" expanded="true" signature="437:1557" ph="..." />
-            <marker date="1477931820000" expanded="true" signature="540:696" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/auth/auth.service.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -858,14 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/inbox/inbox.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/auth/auth.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -886,9 +875,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state relative-caret-position="375">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/inbox/inbox.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/email/email.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <marker date="1477931820000" expanded="true" signature="437:1557" ph="..." />
+            <marker date="1477931820000" expanded="true" signature="540:696" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

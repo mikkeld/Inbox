@@ -3,6 +3,7 @@ import { Email, IEmail } from '../email';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { EmailService } from '../email/email.service';
 import {FirebaseObjectObservable} from "angularfire2";
+import { ReplyComponent } from '../email/reply.component';
 
 @Component({
   selector: 'app-email-detail',
@@ -11,7 +12,7 @@ import {FirebaseObjectObservable} from "angularfire2";
 })
 export class EmailDetailComponent implements OnInit {
 
-  email: FirebaseObjectObservable<IEmail  >;
+  email: FirebaseObjectObservable<IEmail>;
 
   constructor(
     private emailService: EmailService,

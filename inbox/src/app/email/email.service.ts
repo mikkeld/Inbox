@@ -4,7 +4,7 @@ import { IEmail, Email } from '../email';
 import { AuthService } from '../auth/auth.service';
 import {Observable} from "rxjs";
 import {IPerson, Person} from "../person";
-
+import {Reply, IReply} from './reply';
 @Injectable()
 export class EmailService {
 
@@ -58,6 +58,11 @@ export class EmailService {
       .update({ read: true })
   }
 
+  addReply(reply: IReply, key: string) {
+    this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${key}/replies`)
+      .push(reply)
+  }
+
   unreadEmailCount(): any {
     return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/`, {
       query: {
@@ -67,22 +72,6 @@ export class EmailService {
     }).map(unreadEmails => {
       return unreadEmails.length;
     });
-    //
-    // return this.authService.getUserInformation()
-    //   .switchMap(user => {
-    //     return this.af.database.list(`emails/${user.authId}`, {
-    //       query: {
-    //         orderByChild: 'read',
-    //         equalTo: false
-    //       }
-    //     })
-    //   }).map(unreadEmails => {
-    //     return unreadEmails.length;
-    //   })
-  }
-
-  private emailForKey(key: string): FirebaseObjectObservable<IEmail> {
-    return this.af.database.object(`${this.emailUserPath}/${key}`)
   }
 
 }

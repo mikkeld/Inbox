@@ -1,0 +1,9 @@
+<div class="reply-box">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input #reply class="mdl-textfield__input" type="text" id="reply" name="reply">
+    <label class="mdl-textfield__label" for="reply">Reply...</label>
+  </div>
+  <button (click)="addReply(reply.value)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+    Reply
+  </button>
+</div>

@@ -9,3 +9,5 @@
     {{ (email | async)?.content }}
   </div>
 </div>
+
+<reply [email]="email | async"></reply>

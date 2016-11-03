@@ -13,6 +13,7 @@ export class EmailService {
 
   constructor(private af: AngularFire, private authService: AuthService) {
     this.emailUserPath = `/emails/${authService.id}`;
+    console.log(this.emailUserPath);
   }
 
   composeEmail(title: string, content:string, receiver: IPerson): void {

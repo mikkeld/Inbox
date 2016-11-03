@@ -4,18 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { InboxComponent } from './emails/inbox/inbox.component';
+import { EmailsModule } from './emails/emails.module';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
-// import { Config } from '../../config';
-import { ComposeComponent } from './emails/compose/compose.component';
-import {EmailService} from "./emails/shared/email.service";
-import {AuthService} from "./auth/auth.service";
-import { EmailDetailComponent } from './emails/email-detail/email-detail.component';
 import { UserSearchComponent } from './shared/user-search/user-search.component';
-import { AuthGuard } from './auth/auth-guard';
-import { ReplyComponent } from './emails/reply/reply.component';
+import {AuthService} from "./auth/auth.service";
+import {AuthGuard} from "./auth/auth-guard";
+import {EmailRoutingModule} from "./emails/email-routing.module";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -32,20 +28,21 @@ const myFirebaseAuthConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    InboxComponent,
-    ComposeComponent,
-    EmailDetailComponent,
-    UserSearchComponent,
-    ReplyComponent
+    UserSearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
+    EmailRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
+    EmailsModule
   ],
-  providers: [EmailService, AuthService, AuthGuard],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

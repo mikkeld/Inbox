@@ -9,20 +9,11 @@ import 'rxjs/add/operator/toPromise';
 export class AuthService {
 
   private authState: FirebaseAuthState = null;
-  private user: any;
 
   constructor(private af: AngularFire, public auth$: FirebaseAuth) {
     auth$.subscribe((state: FirebaseAuthState) => {
       this.authState = state;
     })
-  }
-
-  getAuthenticated(): Observable<any> {
-    return this.af.auth;
-  }
-
-  setUser(user) {
-    this.user = user
   }
 
   get authenticated() {

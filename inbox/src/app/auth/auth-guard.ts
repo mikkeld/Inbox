@@ -10,7 +10,7 @@ import {AngularFire} from "angularfire2";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router, private af: AngularFire) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): Observable<boolean> {
     return this.authService.auth$
@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
       .map(authState => !!authState)
       .do(authenticated => {
         if (!authenticated) {
-          this.router.navigate(['/search']);
+          this.router.navigate(['/compose']);
         }
       });
   }

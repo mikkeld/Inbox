@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71050d13-0a48-4cb2-a188-20471397e7ca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inbox/src/app/emails/email-routing.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inbox/src/app/emails/emails.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/inbox/src/app/app-routing.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/app.module.ts" afterPath="$PROJECT_DIR$/inbox/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/auth/auth-guard.ts" afterPath="$PROJECT_DIR$/inbox/src/app/auth/auth-guard.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/auth/auth.service.ts" afterPath="$PROJECT_DIR$/inbox/src/app/auth/auth.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/emails/shared/email.service.ts" afterPath="$PROJECT_DIR$/inbox/src/app/emails/shared/email.service.ts" />
-    </list>
+    <list default="true" id="71050d13-0a48-4cb2-a188-20471397e7ca" name="Default" comment="" />
     <ignored path="Inbox.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -35,8 +26,8 @@
       <file leaf-file-name="email.service.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inbox/src/app/emails/shared/email.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+            <state relative-caret-position="555">
+              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -410,12 +401,12 @@
       <workItem from="1478164651056" duration="11497000" />
       <workItem from="1478182789378" duration="2807000" />
       <workItem from="1478190945212" duration="5231000" />
-      <workItem from="1478205654499" duration="4105000" />
+      <workItem from="1478205654499" duration="4165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87946000" />
+    <option name="totallyTimeSpent" value="88006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1421" height="797" extended-state="0" />
@@ -868,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/emails/shared/email.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        <state relative-caret-position="555">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

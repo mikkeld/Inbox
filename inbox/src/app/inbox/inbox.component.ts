@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Email } from '../email';
+import { IEmail, Email } from '../email';
 import { Person } from '../person';
 import { Router } from '@angular/router';
 import {FirebaseListObservable} from "angularfire2";
@@ -13,16 +13,20 @@ import {AuthService} from "../auth/auth.service";
 })
 export class InboxComponent implements OnInit {
 
-  public emails: FirebaseListObservable<any>;
+  public emails: FirebaseListObservable<IEmail[]>;
 
   constructor(
     private router: Router,
-    private emailService: EmailService,
-    private authService: AuthService,
+    private emailService: EmailService
   ) { }
 
   ngOnInit() {
     this.emails = this.emailService.getAllEmails();
+  }
+
+  public gotoDetail(email: IEmail): void {
+    this.emailService.markAsRead(email);
+    this.router.navigate(['/email', email.$key]);
   }
 
   public linkToCompose(): void {
@@ -30,13 +34,8 @@ export class InboxComponent implements OnInit {
     this.router.navigate(link);
   }
 
-  public markAsImportant(email: Email, $key: string): void {
-    this.emailService.markAsImportant(email, $key);
-  }
-
-  public gotoDetail(email: Email, $key:string): void {
-    this.emailService.markAsRead(email, $key);
-    this.router.navigate(['/email', $key]);
+  public markAsImportant(email: IEmail): void {
+    this.emailService.markAsImportant(email);
   }
 
 }

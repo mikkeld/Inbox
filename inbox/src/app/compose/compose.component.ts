@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Email } from '../email';
+import { IEmail, Email } from '../email';
 import { Person } from '../person';
 import { Router } from '@angular/router';
 import { EmailService } from '../email/email.service';
@@ -15,7 +15,6 @@ import { AuthService } from '../auth/auth.service';
 })
 export class ComposeComponent implements OnInit {
 
-  emails: Email[];
   private searchTerms = new Subject<string>();
   public people: Observable<Person[]>;
   public receiver: Person;
@@ -23,8 +22,7 @@ export class ComposeComponent implements OnInit {
   constructor(
     private router: Router,
     private emailService: EmailService,
-    private userSearchService: UserSearchService,
-    private authService: AuthService
+    private userSearchService: UserSearchService
   ) { }
 
   ngOnInit() {
@@ -41,9 +39,7 @@ export class ComposeComponent implements OnInit {
   }
 
   sendEmail(emailForm: any): void {
-    let receiver = new Person(this.receiver.authId, this.receiver.firstName, this.receiver.lastName, this.receiver.profilePicturePath)
-    let email = new Email(receiver, receiver, Date.now(), emailForm.content, emailForm.title);
-    this.emailService.composeEmail(email);
+    this.emailService.composeEmail(emailForm.title, emailForm.content, this.receiver);
     let inbox = ['inbox'];
     this.router.navigate(inbox);
   }
@@ -53,6 +49,7 @@ export class ComposeComponent implements OnInit {
   }
 
   setReceiver(person: Person): void {
+    console.log(person);
     this.receiver = person;
   }
 

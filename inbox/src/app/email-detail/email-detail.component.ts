@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Email } from '../email';
+import { Email, IEmail } from '../email';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { EmailService } from '../email/email.service';
 import {FirebaseObjectObservable} from "angularfire2";
@@ -11,7 +11,7 @@ import {FirebaseObjectObservable} from "angularfire2";
 })
 export class EmailDetailComponent implements OnInit {
 
-  email: FirebaseObjectObservable<any>;
+  email: FirebaseObjectObservable<IEmail  >;
 
   constructor(
     private emailService: EmailService,
@@ -19,11 +19,8 @@ export class EmailDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      let key = params['id'];
-      this.email = this.emailService.getEmail(key);
-    })
-
+    let key = this.route.snapshot.params['id'];
+    this.email = this.emailService.getEmail(key);
   }
 
 

@@ -1,55 +1,74 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
-import { Email } from '../email';
+import { IEmail, Email } from '../email';
 import { AuthService } from '../auth/auth.service';
-import {BaseService} from "./base.service";
+import {Observable} from "rxjs";
+import {IPerson, Person} from "../person";
 
 @Injectable()
 export class EmailService {
 
-  constructor(
-    private af: AngularFire,
-    private authService: AuthService
-  ) { }
+  private emails: FirebaseListObservable<IEmail[]>;
+  private emailUserPath: string;
 
-  composeEmail(email: Email): void {
-    this.af.database.list(`/emails/${email.receiver.authId}`).push(email);
+  constructor(private af: AngularFire, private authService: AuthService) {
+    this.emailUserPath = `/emails/${authService.id}`;
   }
 
-  getAllEmails(): any {
-    return this.authService.getUserInformation()
-      .switchMap(user => {
-        return this.af.database.list(`/emails/${user.authId}`);
-      });
+  composeEmail(title: string, content:string, receiver: IPerson): void {
+    let from = new Person('Imf4nFal01MofFYqOe9I8LcfhX22', "Mikkel", "Dengsøe", "https://lh6.googleusercontent.com/-D3ZhLQkij2I/AAAAAAAAAAI/AAAAAAAAAAA/AGNl-OownkmptDpN_QjXHaRV7DOhtCverw/s96-c/photo.jpg");
+    let to = new Person(receiver.authId, receiver.firstName, receiver.lastName, receiver.profilePicturePath);
+    this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`)
+      .push(new Email(to, from, Date.now(), content, title));
   }
 
-  getEmail(key: string): any {
-    return this.authService.getUserInformation()
-      .switchMap(user => {
-        return this.af.database.object(`emails/${user.authId}/${key}`)
-      })
+  // getAllEmails(): FirebaseListObservable<Email[]> {
+  //   return this.emails;
+  // }
+
+  getAllEmails(): FirebaseListObservable<IEmail[]> {
+    return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`);
   }
 
-  markAsImportant(email: Email, $key: string): void {
-    this.af.database.object(`emails/${email.receiver.authId}/${$key}`).update({ starred: !email.starred })
+  getEmail(key: string): FirebaseObjectObservable<Email> {
+    return this.af.database.object(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`);
   }
 
-  markAsRead(email: Email, $key: string): void {
-    this.af.database.object(`emails/${email.receiver.authId}/${$key}`).update({ read: true })
+  markAsImportant(email: IEmail): firebase.Promise<any> {
+    return this.af.database.object(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${email.$key}`)
+      .update({ starred: !email.starred});
+  }
+
+  markAsRead(email: IEmail): firebase.Promise<any>  {
+    return this.af.database.object(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${email.$key}`)
+      .update({ read: true })
   }
 
   unreadEmailCount(): any {
-    return this.authService.getUserInformation()
-      .switchMap(user => {
-        return this.af.database.list(`emails/${user.authId}`, {
-          query: {
-            orderByChild: 'read',
-            equalTo: false
-          }
-        })
-      }).map(unreadEmails => {
-        return unreadEmails.length;
-      })
+    return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/`, {
+      query: {
+        orderByChild: 'read',
+        equalTo: false
+      }
+    }).map(unreadEmails => {
+      return unreadEmails.length;
+    });
+    //
+    // return this.authService.getUserInformation()
+    //   .switchMap(user => {
+    //     return this.af.database.list(`emails/${user.authId}`, {
+    //       query: {
+    //         orderByChild: 'read',
+    //         equalTo: false
+    //       }
+    //     })
+    //   }).map(unreadEmails => {
+    //     return unreadEmails.length;
+    //   })
+  }
+
+  private emailForKey(key: string): FirebaseObjectObservable<IEmail> {
+    return this.af.database.object(`${this.emailUserPath}/${key}`)
   }
 
 }

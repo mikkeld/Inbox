@@ -14,6 +14,7 @@ import {EmailService} from "./email/email.service";
 import {AuthService} from "./auth/auth.service";
 import { EmailDetailComponent } from './email-detail/email-detail.component';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { AuthGuard } from './auth/auth-guard';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -42,7 +43,7 @@ const myFirebaseAuthConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [EmailService, AuthService],
+  providers: [EmailService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

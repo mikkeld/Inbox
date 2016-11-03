@@ -1,4 +1,12 @@
-export class Person {
+export interface IPerson {
+  $key?: string;
+  authId: string;
+  firstName: string;
+  lastName: string;
+  profilePicturePath: string;
+}
+
+export class Person implements IPerson {
   authId: string;
   firstName: string;
   lastName: string;
@@ -11,7 +19,4 @@ export class Person {
     this.profilePicturePath = profilePicturePath;
   }
 
-  fullName(): string {
-    return `${this.firstName} ${this.lastName}`;
-  }
 }

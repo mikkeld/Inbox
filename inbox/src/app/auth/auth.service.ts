@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import {AngularFire, FirebaseAuthState, FirebaseAuth} from 'angularfire2';
 import { Person } from '../person';
 import { Observable }        from 'rxjs';
 import 'rxjs/add/operator/map';
@@ -8,22 +8,33 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AuthService {
 
-  constructor(private af: AngularFire) { }
+  private authState: FirebaseAuthState = null;
+  private user: any;
 
-  public login() {
-    this.af.auth.login()
-      .then((user) => {
-        this.saveUser(new Person(user.auth.uid, user.auth.displayName, user.auth.displayName, user.auth.photoURL))
-      });
+  constructor(private af: AngularFire, public auth$: FirebaseAuth) {
+    auth$.subscribe((state: FirebaseAuthState) => {
+      this.authState = state;
+    })
   }
 
-  public logout() {
-    this.af.auth.logout();
-    // Redirect user
+  getAuthenticated(): Observable<any> {
+    return this.af.auth;
+  }
+
+  setUser(user) {
+    this.user = user
+  }
+
+  get authenticated() {
+    return this.authState !== null;
+  }
+
+  get id(): string {
+    return this.authenticated ? this.authState.uid : '';
   }
 
   public getUserInformation(): Observable<Person> {
-    return this.af.auth.map(authInfo => {
+    return this.auth$.map(authInfo => {
       return new Person(
         authInfo.auth.uid,
         authInfo.auth.displayName,
@@ -31,6 +42,17 @@ export class AuthService {
         authInfo.auth.photoURL
       )
     });
+  }
+
+  public login() {
+    this.auth$.login()
+      .then((user) => {
+        this.saveUser(new Person(user.auth.uid, user.auth.displayName, user.auth.displayName, user.auth.photoURL))
+      });
+  }
+
+  public logout() {
+    this.auth$.logout();
   }
 
   private saveUser(person: Person): void {

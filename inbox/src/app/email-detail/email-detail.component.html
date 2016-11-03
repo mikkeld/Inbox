@@ -1,3 +1,11 @@
-<div>
-  {{ (email | async)?.title }}
+<div class="content-wrapper">
+  <h5>{{ (email | async)?.title }}</h5>
+  <hr>
+  <span class="sender">sender:</span>
+  <img id="user-pic" [src]="(email | async)?.sender.profilePicturePath">
+  <span>{{(email | async)?.sender.firstName }}</span>
+
+  <div class="email-content">
+    {{ (email | async)?.content }}
+  </div>
 </div>

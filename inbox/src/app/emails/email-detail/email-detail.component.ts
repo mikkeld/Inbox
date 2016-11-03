@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Email, IEmail } from '../email';
+import { Email, IEmail } from '../shared/email';
 import { ActivatedRoute, Params }   from '@angular/router';
-import { EmailService } from '../email/email.service';
+import { EmailService } from '../shared/email.service';
 import {FirebaseObjectObservable} from "angularfire2";
-import { ReplyComponent } from '../email/reply.component';
+import { ReplyComponent } from '../reply/reply.component';
 
 @Component({
   selector: 'app-email-detail',
-  templateUrl: './email-detail.component.html',
-  styleUrls: ['./email-detail.component.css']
+  templateUrl: 'email-detail.component.html',
+  styleUrls: ['email-detail.component.css']
 })
 export class EmailDetailComponent implements OnInit {
 

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
-import { IEmail, Email } from '../email';
-import { AuthService } from '../auth/auth.service';
+import { IEmail, Email } from './email';
+import { AuthService } from '../../auth/auth.service';
 import {Observable} from "rxjs";
-import {IPerson, Person} from "../person";
-import {Reply, IReply} from './reply';
+import {IPerson, Person} from "../../core/person";
+import {Reply, IReply} from '../reply/reply';
 @Injectable()
 export class EmailService {
 

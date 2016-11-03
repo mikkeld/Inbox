@@ -1,9 +1,9 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InboxComponent }      from './inbox/inbox.component';
-import { ComposeComponent }      from './compose/compose.component';
-import { EmailDetailComponent }      from './email-detail/email-detail.component';
-import { UserSearchComponent }      from './user-search/user-search.component';
+import { InboxComponent }      from './emails/inbox/inbox.component';
+import { ComposeComponent }      from './emails/compose/compose.component';
+import { EmailDetailComponent }      from './emails/email-detail/email-detail.component';
+import { UserSearchComponent }      from './shared/user-search/user-search.component';
 import {AuthGuard} from "./auth/auth-guard";
 
 const routes: Routes = [

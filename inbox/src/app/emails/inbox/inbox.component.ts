@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IEmail, Email } from '../email';
-import { Person } from '../person';
+import { IEmail, Email } from '../shared/email';
+import { Person } from '../../core/person';
 import { Router, ActivatedRoute } from '@angular/router';
 import {FirebaseListObservable} from "angularfire2";
-import {EmailService} from "../email/email.service";
-import {AuthService} from "../auth/auth.service";
+import {EmailService} from "../shared/email.service";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-inbox',
-  templateUrl: './inbox.component.html',
-  styleUrls: ['./inbox.component.css']
+  templateUrl: 'inbox.component.html',
+  styleUrls: ['inbox.component.css']
 })
 export class InboxComponent implements OnInit {
 

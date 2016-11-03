@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EmailService } from '../email/email.service';
+import { EmailService } from '../shared/email.service';
 import {FirebaseObjectObservable} from "angularfire2";
 import {Reply} from './reply';
 
 @Component({
   selector: 'reply',
-  templateUrl: './reply.component.html',
-  styleUrls: ['./reply.component.css']
+  templateUrl: 'reply.component.html',
+  styleUrls: ['reply.component.css']
 })
 export class ReplyComponent implements OnInit {
 

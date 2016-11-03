@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { Observable } from 'rxjs';
-import { Person } from './person';
-import { EmailService } from './email/email.service';
+import { Person } from './core/person';
+import { EmailService } from './emails/shared/email.service';
 
 @Component({
   selector: 'app-root',

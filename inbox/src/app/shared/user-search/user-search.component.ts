@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserSearchService } from './user-search.service';
 import {Subject, Observable} from "rxjs";
-import {Person} from "../person";
+import {Person} from "../../core/person";
 
 @Component({
   selector: 'app-user-search',
-  templateUrl: './user-search.component.html',
-  styleUrls: ['./user-search.component.css'],
+  templateUrl: 'user-search.component.html',
+  styleUrls: ['user-search.component.css'],
   providers: [UserSearchService]
 })
 export class UserSearchComponent implements OnInit {

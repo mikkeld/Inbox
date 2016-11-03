@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IEmail, Email } from '../email';
-import { Person } from '../person';
+import { IEmail, Email } from '../shared/email';
+import { Person } from '../../core/person';
 import { Router } from '@angular/router';
-import { EmailService } from '../email/email.service';
-import { UserSearchService } from '../user-search/user-search.service';
+import { EmailService } from '../shared/email.service';
+import { UserSearchService } from '../../shared/user-search/user-search.service'
 import {Subject, Observable} from "rxjs";
-import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-compose',
-  templateUrl: './compose.component.html',
-  styleUrls: ['./compose.component.css'],
+  templateUrl: 'compose.component.html',
+  styleUrls: ['compose.component.css'],
   providers: [UserSearchService]
 })
 export class ComposeComponent implements OnInit {

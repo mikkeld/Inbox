@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFire } from 'angularfire2';
-import { Person } from '../person';
+import { Person } from '../../core/person';
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';

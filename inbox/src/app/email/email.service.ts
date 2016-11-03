@@ -22,12 +22,26 @@ export class EmailService {
       .push(new Email(to, from, Date.now(), content, title));
   }
 
-  // getAllEmails(): FirebaseListObservable<Email[]> {
-  //   return this.emails;
-  // }
-
   getAllEmails(): FirebaseListObservable<IEmail[]> {
     return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`);
+  }
+
+  getAllEmailsForRoute(route: string): FirebaseListObservable<IEmail[]> {
+    switch(route) {
+      case 'inbox':
+        return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`);
+
+      case 'starred':
+        return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`, {
+          query: {
+            orderByChild: 'starred',
+            equalTo: true
+          }
+        });
+
+      default:
+        console.log("this is default. Why am I here")
+    }
   }
 
   getEmail(key: string): FirebaseObjectObservable<Email> {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmail, Email } from '../email';
 import { Person } from '../person';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {FirebaseListObservable} from "angularfire2";
 import {EmailService} from "../email/email.service";
 import {AuthService} from "../auth/auth.service";
@@ -14,14 +14,17 @@ import {AuthService} from "../auth/auth.service";
 export class InboxComponent implements OnInit {
 
   public emails: FirebaseListObservable<IEmail[]>;
+  path:string;
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private emailService: EmailService
   ) { }
 
   ngOnInit() {
-    this.emails = this.emailService.getAllEmails();
+    const path = this.route.snapshot.url[0].path;
+    this.emails = this.emailService.getAllEmailsForRoute(path);
   }
 
   public gotoDetail(email: IEmail): void {

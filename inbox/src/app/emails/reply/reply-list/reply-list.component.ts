@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {FirebaseListObservable} from "angularfire2";
+import {Reply} from "../reply";
+import {IEmail} from '../../shared/email';
+import {ReplyService} from "../reply.service";
 
 @Component({
-  selector: 'app-reply-list',
+  selector: 'reply-list',
   templateUrl: './reply-list.component.html',
   styleUrls: ['./reply-list.component.css']
 })
 export class ReplyListComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  email: IEmail;
+  replies: FirebaseListObservable<Reply[]>;
+
+  constructor(private replyService: ReplyService) { }
 
   ngOnInit() {
+    this.replies = this.replyService.getRepliesForEmail(this.email);
   }
 
 }

@@ -1,3 +1,11 @@
-<p>
-  reply-list works!
-</p>
+<ul class="demo-list-three mdl-list">
+  <li *ngFor="let reply of replies | async" class="mdl-list__item mdl-list__item--three-line">
+    <span class="mdl-list__item-primary-content">
+      <img class="material-icons mdl-list__item-avatar" id="user-pic" [src]="reply.sender.profilePicturePath" />
+      <span>{{ reply.sender.firstName }}</span>
+      <span class="mdl-list__item-text-body">
+        {{ reply.reply }}
+      </span>
+    </span>
+  </li>
+</ul>

@@ -8,35 +8,13 @@
       <div class="mdl-layout-spacer"></div>
 
       <!-- Show logged in or logged out UI -->
-      <div *ngIf="!currentUser">
-        <button (click)="login()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-          Login
-        </button>
-      </div>
-      <div *ngIf="currentUser">
-        <img id="user-pic" [src]="(currentUser | async)?.profilePicturePath">
-        <button id="demo-menu-lower-right"
-                class="mdl-button mdl-js-button mdl-button--icon">
-          <i class="material-icons">more_vert</i>
-        </button>
-
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-            for="demo-menu-lower-right">
-          <li (click)="logout()" class="mdl-menu__item">Logout</li>
-          <li class="mdl-menu__item">Profile</li>
-        </ul>
-      </div>
+      <user-or-login [currentUser]="currentUser | async"></user-or-login>
 
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">MikMail</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href=""><span class="mdl-badge" [attr.data-badge]="unreadEmailCount | async">Inbox</span></a>
-      <a class="mdl-navigation__link" href="">Send</a>
-      <a routerLink="/starred" class="mdl-navigation__link" >Starred</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-    </nav>
+    <navigation-list [unreadEmailCount]="unreadEmailCount| async"></navigation-list>
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">

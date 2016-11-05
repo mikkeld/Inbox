@@ -1,41 +1,47 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
 <!-- Only show autocomplete when the current receiver is not set -->
-<div *ngIf="!receiver" class="demo-list-action mdl-list search-container">
-  <div (click)="setReceiver(person)" class="mdl-list__item" *ngFor="let person of people | async">
-    <span class="mdl-list__item-primary-content">
-      <img class="mdl-chip__contact" [src]="person.profilePicturePath" />
-      <span>{{ person.firstName }}</span>
-    </span>
+      <div *ngIf="!receiver" class="demo-list-action mdl-list search-container">
+        <div (click)="setReceiver(person)" class="mdl-list__item" *ngFor="let person of people | async">
+          <span class="mdl-list__item-primary-content">
+            <img class="mdl-chip__contact" [src]="person.profilePicturePath" />
+            <span>{{ person.firstName }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="email-form">
+        <form #composeForm="ngForm" (ngSubmit)="sendEmail(composeForm.value)">
+
+          <!-- Hide input bar if receiver is set -->
+          <div *ngIf="!receiver" class="mdl-textfield mdl-js-textfield">
+            <input ngModel #searchBox (keyup)="search(searchBox.value)" class="mdl-textfield__input" type="text" id="receiver" name="receiver">
+            <label class="mdl-textfield__label" for="receiver">Receiver...</label>
+          </div>
+
+          <!-- Show receiver chip if receiver is set -->
+          <div class="mdl-textfield mdl-js-textfield" *ngIf="receiver">
+            <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+              <img class="mdl-chip__contact" [src]="receiver.profilePicturePath" />
+              <span class="mdl-chip__text">{{ receiver.firstName }}</span>
+              <a (click)="resetReceiver()" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
+            </span>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield">
+            <input ngModel class="mdl-textfield__input" type="text" id="title" name="title">
+            <label class="mdl-textfield__label" for="title">Title...</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <textarea ngModel class="mdl-textfield__input" type="text" rows= "3" id="content" name="content"></textarea>
+            <label class="mdl-textfield__label" for="content">Write email...</label>
+          </div>
+          <button [disabled]="!receiver" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Send email
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="email-form">
-  <form #composeForm="ngForm" (ngSubmit)="sendEmail(composeForm.value)">
-
-    <!-- Hide input bar if receiver is set -->
-    <div *ngIf="!receiver" class="mdl-textfield mdl-js-textfield">
-      <input ngModel #searchBox (keyup)="search(searchBox.value)" class="mdl-textfield__input" type="text" id="receiver" name="receiver">
-      <label class="mdl-textfield__label" for="receiver">Receiver...</label>
-    </div>
-
-    <!-- Show receiver chip if receiver is set -->
-    <div class="mdl-textfield mdl-js-textfield" *ngIf="receiver">
-      <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
-        <img class="mdl-chip__contact" [src]="receiver.profilePicturePath" />
-        <span class="mdl-chip__text">{{ receiver.firstName }}</span>
-        <a (click)="resetReceiver()" class="mdl-chip__action"><i class="material-icons">cancel</i></a>
-      </span>
-    </div>
-
-    <div class="mdl-textfield mdl-js-textfield">
-      <input ngModel class="mdl-textfield__input" type="text" id="title" name="title">
-      <label class="mdl-textfield__label" for="title">Title...</label>
-    </div>
-    <div class="mdl-textfield mdl-js-textfield">
-      <textarea ngModel class="mdl-textfield__input" type="text" rows= "3" id="content" name="content"></textarea>
-      <label class="mdl-textfield__label" for="content">Write email...</label>
-    </div>
-    <button [disabled]="!receiver" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-      Send email
-    </button>
-  </form>
-</div>
+</section>

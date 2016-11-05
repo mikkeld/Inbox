@@ -12,6 +12,8 @@ import { UserSearchComponent } from './shared/user-search/user-search.component'
 import {AuthService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth-guard";
 import {EmailRoutingModule} from "./emails/email-routing.module";
+import { UserOrLoginComponent } from './navigation/user-or-login/user-or-login.component';
+import { NavigationListComponent } from './navigation/navigation-list/navigation-list.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -28,7 +30,9 @@ const myFirebaseAuthConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    UserOrLoginComponent,
+    NavigationListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-navigation-list',
+  selector: 'navigation-list',
   templateUrl: './navigation-list.component.html',
   styleUrls: ['./navigation-list.component.css']
 })
-export class NavigationListComponent implements OnInit {
+export class NavigationListComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input()
+  unreadEmailCount: number;
 
 }

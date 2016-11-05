@@ -1,20 +1,26 @@
-<ul class="demo-list-three mdl-list">
-  <li *ngFor="let email of emails | async" class="mdl-list__item mdl-list__item--three-line email-list" (click)="gotoDetail(email, email.$key)">
-    <span class="mdl-list__item-primary-content" [style.font-weight]="!email.read ? 'bold' : 'normal'">
-      <i class="material-icons mdl-list__item-avatar">person</i>
-      <span>{{ email.title }}</span>
-      <span><small>{{ email.date | date }}</small></span>
-      <span class="mdl-list__item-text-body">
-        {{ email.content }}
-      </span>
-    </span>
-    <span class="mdl-list__item-secondary-content">
-      <a (click)="markAsImportant(email)" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">{{email.starred ? 'star' : 'star_border' }}</i></a>
-    </span>
-  </li>
-</ul>
-<button (click)="linkToCompose()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bottom-right">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <ul class="demo-list-three mdl-list">
+        <li *ngFor="let email of emails | async" class="mdl-list__item mdl-list__item--three-line email-list"
+            (click)="gotoDetail(email, email.$key)">
+          <span class="mdl-list__item-primary-content" [style.font-weight]="!email.read ? 'bold' : 'normal'">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>{{ email.title }}</span>
+            <span><small>{{ email.date | date }}</small></span>
+            <span class="mdl-list__item-text-body">
+              {{ email.content }}
+            </span>
+          </span>
+          <span class="mdl-list__item-secondary-content">
+            <a (click)="markAsImportant(email)" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">{{email.starred ? 'star' : 'star_border' }}</i></a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<button (click)="linkToCompose()"
+        class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bottom-right">
   <i class="material-icons">add</i>
 </button>
-
-{{path}}

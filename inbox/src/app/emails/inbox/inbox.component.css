@@ -8,3 +8,13 @@
 .email-list {
   cursor: pointer;
 }
+
+.section--center {
+  max-width: 860px;
+  margin-top:20px;
+}
+
+.mdl-layout__content section:not(:last-of-type) {
+  position: relative;
+  margin-bottom: 48px;
+}

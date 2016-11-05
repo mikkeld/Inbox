@@ -1,9 +1,11 @@
 <div class="reply-box">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input #reply class="mdl-textfield__input" type="text" id="reply" name="reply">
-    <label class="mdl-textfield__label" for="reply">Reply...</label>
+  <div class="reply-box-content">
+    <div class="mdl-textfield mdl-js-textfield reply-textfield">
+      <textarea (blur)="onBlur()" (focus)="onFocus()" #reply class="mdl-textfield__input" type="text" id="reply" rows="1" name="reply"></textarea>
+      <label class="mdl-textfield__label" for="reply">Reply...</label>
+    </div>
   </div>
-  <button (click)="addReply(reply.value)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+  <button [disabled]="!inFocus" (click)="addReply(reply.value)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
     Reply
   </button>
 </div>

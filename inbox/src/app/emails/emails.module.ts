@@ -4,9 +4,11 @@ import { ComposeComponent } from './compose/compose.component';
 import { EmailDetailComponent } from './email-detail/email-detail.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { ReplyComponent } from './reply/reply.component';
+import { ReplyListComponent } from './reply/reply-list/reply-list.component';
 import { EmailService } from './shared/email.service';
 
 import { FormsModule } from '@angular/forms';
+import {ReplyService} from "./reply/reply.service";
 
 @NgModule({
   imports: [
@@ -17,10 +19,12 @@ import { FormsModule } from '@angular/forms';
     ComposeComponent,
     EmailDetailComponent,
     InboxComponent,
-    ReplyComponent
+    ReplyComponent,
+    ReplyListComponent
   ],
   providers: [
-    EmailService
+    EmailService,
+    ReplyService
   ]
 })
 

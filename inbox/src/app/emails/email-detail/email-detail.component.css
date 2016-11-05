@@ -19,3 +19,8 @@
   font-style: italic;
   color: grey;
 }
+
+.section--center {
+  max-width: 860px;
+  margin-top:20px;
+}

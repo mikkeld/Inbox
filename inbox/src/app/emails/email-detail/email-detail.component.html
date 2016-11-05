@@ -1,13 +1,19 @@
-<div class="content-wrapper">
-  <h5>{{ (email | async)?.title }}</h5>
-  <hr>
-  <span class="sender">sender:</span>
-  <img id="user-pic" [src]="(email | async)?.sender.profilePicturePath">
-  <span>{{(email | async)?.sender.firstName }}</span>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <div class="content-wrapper">
+        <h5>{{ (email | async)?.title }}</h5>
+        <hr>
+        <span class="sender">sender:</span>
+        <img id="user-pic" [src]="(email | async)?.sender.profilePicturePath">
+        <span>{{(email | async)?.sender.firstName }}</span>
 
-  <div class="email-content">
-    {{ (email | async)?.content }}
+        <div class="email-content">
+          {{ (email | async)?.content }}
+        </div>
+      </div>
+    </div>
+    <reply-list [email]="email | async"></reply-list>
+    <reply [email]="email | async"></reply>
   </div>
-</div>
-
-<reply [email]="email | async"></reply>
+</section>

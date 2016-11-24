@@ -7,6 +7,7 @@ import {PhotosService} from './shared/photos.service';
 import { PhotogroupListComponent } from './photogroup-list/photogroup-list.component';
 import { PhotogroupItemComponent } from './photogroup-item/photogroup-item.component';
 import { PhotosComponent } from './photos/photos.component';
+import {FileUploadComponent} from "./shared/file-upload";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PhotosComponent } from './photos/photos.component';
     PhotoListComponent,
     PhotogroupListComponent,
     PhotogroupItemComponent,
-    PhotosComponent
+    PhotosComponent,
+    FileUploadComponent
   ],
   providers: [
     PhotosService

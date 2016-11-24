@@ -10,4 +10,15 @@ export class Photo implements IPhoto {
               public tags: string[],
               public imgPath: string) {
   }
+
+  photoHasWord(word: string): boolean {
+    return this.tags.indexOf(word) > -1;
+  }
+}
+
+export class PhotoTagItem extends Photo {
+  constructor(date: number, tags: string[], imgPath: string) {
+    super(date, tags, imgPath)
+  }
+
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PhotosService} from "../shared/photos.service";
 import {Photo, IPhoto} from '../shared/photo';
+import {FirebaseListObservable} from "angularfire2";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-photos',
@@ -9,9 +11,15 @@ import {Photo, IPhoto} from '../shared/photo';
 })
 export class PhotosComponent implements OnInit {
 
-  constructor(private photoService: PhotosService) { }
+  photos: FirebaseListObservable<IPhoto[]>;
+  photosTags: any;
+
+  constructor(private photoService: PhotosService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.photos = this.photoService.getAllPhotos();
+    this.photosTags = this.photoService.getNumberImages(3);
+    console.log(this.route.snapshot.url[0].path)
   }
 
   private createThreePhotos(): void {

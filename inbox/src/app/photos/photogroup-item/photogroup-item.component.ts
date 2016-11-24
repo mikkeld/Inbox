@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-photogroup-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photogroup-item.component.css']
 })
 export class PhotogroupItemComponent implements OnInit {
+
+  @Input()
+  photoTag: any;
 
   constructor() { }
 

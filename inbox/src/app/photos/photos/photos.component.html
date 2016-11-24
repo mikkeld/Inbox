@@ -1,6 +1,10 @@
-<h3>Photo component</h3>
-<app-photogroup-list></app-photogroup-list>
+<h3 class="inline">Photo component</h3>
+<button class="inline" class="mdl-button mdl-js-button mdl-button--primary">
+  UPLOAD
+</button>
+<file-upload></file-upload>
+<app-photogroup-list [photoTags]="photosTags |async"></app-photogroup-list>
 
 <hr>
 
-<app-photo-list></app-photo-list>
+<app-photo-list [photos]="photos | async"></app-photo-list>

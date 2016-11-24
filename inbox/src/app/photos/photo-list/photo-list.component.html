@@ -1,5 +1,5 @@
 <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--4-col"><img class="responsive-image" src="../../../assets/img1.jpg"></div>
-  <div class="mdl-cell mdl-cell--4-col"><img class="responsive-image" src="../../../assets/img1.jpg"></div>
-  <div class="mdl-cell mdl-cell--4-col"><img class="responsive-image" src="../../../assets/img1.jpg"></div>
+  <div class="mdl-cell mdl-cell--4-col" *ngFor="let photo of photos">
+    <img class="responsive-image" [src]="photo.imgPath">
+  </div>
 </div>

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { EmailsModule } from './emails/emails.module';
+import { PhotosModule } from './photos/photos.module';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -14,7 +15,7 @@ import {AuthGuard} from "./auth/auth-guard";
 import {EmailRoutingModule} from "./emails/email-routing.module";
 import { UserOrLoginComponent } from './navigation/user-or-login/user-or-login.component';
 import { NavigationListComponent } from './navigation/navigation-list/navigation-list.component';
-import { PhotoListComponent } from './photos/photo-list/photo-list.component';
+import {PhotosRoutingModule} from "./photos/photos-routing.module";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -33,8 +34,7 @@ const myFirebaseAuthConfig = {
     AppComponent,
     UserSearchComponent,
     UserOrLoginComponent,
-    NavigationListComponent,
-    PhotoListComponent
+    NavigationListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +42,10 @@ const myFirebaseAuthConfig = {
     HttpModule,
     AppRoutingModule,
     EmailRoutingModule,
+    PhotosRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
-    EmailsModule
+    EmailsModule,
+    PhotosModule
   ],
   providers: [
     AuthService,

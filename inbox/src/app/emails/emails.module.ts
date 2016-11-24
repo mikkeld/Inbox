@@ -29,3 +29,5 @@ import {ReplyService} from "./reply/reply.service";
 })
 
 export class EmailsModule { }
+
+export { EmailService };

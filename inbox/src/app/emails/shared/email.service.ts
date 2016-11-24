@@ -11,9 +11,8 @@ export class EmailService {
   private emails: FirebaseListObservable<IEmail[]>;
   private emailUserPath: string;
 
-  constructor(private af: AngularFire, private authService: AuthService) {
+  constructor(private af: AngularFire, authService: AuthService) {
     this.emailUserPath = `/emails/${authService.id}`;
-    console.log(this.emailUserPath);
   }
 
   composeEmail(title: string, content:string, receiver: IPerson): void {

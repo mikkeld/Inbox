@@ -4,6 +4,7 @@ import { Person } from '../core/person';
 import { Observable }        from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/take';
 
 @Injectable()
 export class AuthService {
@@ -13,7 +14,7 @@ export class AuthService {
   constructor(private af: AngularFire, public auth$: FirebaseAuth) {
     auth$.subscribe((state: FirebaseAuthState) => {
       this.authState = state;
-    })
+    });
   }
 
   get authenticated() {

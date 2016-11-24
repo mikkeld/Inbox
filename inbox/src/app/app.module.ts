@@ -14,6 +14,7 @@ import {AuthGuard} from "./auth/auth-guard";
 import {EmailRoutingModule} from "./emails/email-routing.module";
 import { UserOrLoginComponent } from './navigation/user-or-login/user-or-login.component';
 import { NavigationListComponent } from './navigation/navigation-list/navigation-list.component';
+import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -32,7 +33,8 @@ const myFirebaseAuthConfig = {
     AppComponent,
     UserSearchComponent,
     UserOrLoginComponent,
-    NavigationListComponent
+    NavigationListComponent,
+    PhotoListComponent
   ],
   imports: [
     BrowserModule,

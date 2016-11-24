@@ -1,44 +1,54 @@
 const express = require("express"), bodyParser = require("body-parser"), sentiment = require("sentiment");
 let app = express();
-let Email = require('./models/email');
-let EmailInterace = require('./models/email_interface');
+const vision = require('./vision.js');
 
-//lets us get data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 let port = 8000;
 let router = express.Router();
 
-router.use((req, res, next) => {
-	console.log("Something to happen");
-	next();
-});
-
-router.get('/', (req, res) => {
-	console.log("get");
-});
-
-router.route('/emails')
+router.route('/annotate')
 	.post((req, res) => {
-		// let s1 = sentiment(req.body.text);
-		// let email = new Email();
-		// console.log(email);
-		let email = new Email();
-		let content = req.body;
-		email.composeEmail(content)
-			.then((result, error) => {
+		let Vision = new vision();
+		let image = req.body;
+		Vision.getLabelsForImage(image)
+			.then((annotations, error) => {
 				if(error) throw new Error(error);
-				res.json(result);
-			})
-	})
-
-	.get((req, res) => {
-		Email.getEmails()
-			.then(res => {
-				console.log(res);
+				console.log(annotations);
 			})
 	});
+
+
+// router.use((req, res, next) => {
+// 	console.log("Something to happen");
+// 	next();
+// });
+//
+// router.get('/', (req, res) => {
+// 	console.log("get");
+// });
+//
+// router.route('/emails')
+// 	.post((req, res) => {
+// 		// let s1 = sentiment(req.body.text);
+// 		// let email = new Email();
+// 		// console.log(email);
+// 		let email = new Email();
+// 		let content = req.body;
+// 		email.composeEmail(content)
+// 			.then((result, error) => {
+// 				if(error) throw new Error(error);
+// 				res.json(result);
+// 			})
+// 	})
+//
+// 	.get((req, res) => {
+// 		Email.getEmails()
+// 			.then(res => {
+// 				console.log(res);
+// 			})
+// 	});
 
 // let getSentiment = function(text) {
 // 	return sentiment(text);

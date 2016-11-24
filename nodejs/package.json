@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/vision": "^0.6.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "firebase": "^3.5.2",
+    "google-cloud": "^0.44.0",
     "sentiment": "^2.1.0"
   }
 }

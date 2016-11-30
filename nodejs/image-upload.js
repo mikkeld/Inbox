@@ -17,24 +17,25 @@ class ImageUploader {
         })
     }
 
-    uploadFilePromise(file) {
+    uploadFilePromise(path) {
         return new Promise((resolve, reject) => {
-            // this.bucket.upload(file.path, (err, file) => {
-            //     if(err) reject(err);
-            //     resolve(this.getExternalUrl(file.name));
-            // })
-            resolve(file.path);
+            this.bucket.upload(path, (err, file) => {
+                if(err) reject(err);
+                resolve(file.name);
+            })
         })
     }
 
     getExternalUrl(filename) {
-        this.bucket.file(filename).getSignedUrl({
-            action: 'read',
-            expires: '03-17-2025'
-        }, (err, url) => {
-            if (err) throw new Error(err);
-            return url;
-        })
+        return new Promise((resolve, reject) => {
+            this.bucket.file(filename).getSignedUrl({
+                action: 'read',
+                expires: '03-17-2025'
+            }, (err, url) => {
+                if (err) reject(err);
+                resolve(url);
+            });
+        });
     }
 
     storage() {

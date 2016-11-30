@@ -32,7 +32,16 @@ let routes = function(imageUploader) {
     router.post('/upload',
         imageUploader.getMulter().single('image'),
         (req, res) => {
-            console.log(req.file.path);
+            imageUploader.uploadFilePromise(req.file.path)
+                .then((filename, error) => {
+                    if(error) throw new Error(error);
+                    imageUploader.getExternalUrl(filename)
+                        .then((publicUrl, error) => {
+                            if(error) throw new Error(error);
+                            console.log(publicUrl);
+                        })
+
+                })
     });
 
     return router;

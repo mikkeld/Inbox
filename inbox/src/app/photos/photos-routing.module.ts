@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {PhotosComponent} from './photos/photos.component';
 
 const routes: Routes = [
-  { path: 'photos',  component: PhotosComponent}
+  { path: 'photos',  component: PhotosComponent},
+  { path: 'photos/:filter', component: PhotosComponent}
 ];
 
 @NgModule({

@@ -1,9 +1,5 @@
-<h3 class="inline">Photo component</h3>
-<button class="inline" class="mdl-button mdl-js-button mdl-button--primary">
-  UPLOAD
-</button>
 <file-upload></file-upload>
-<app-photogroup-list [photoTags]="photosTags |async"></app-photogroup-list>
+<app-photogroup-list [filter]="filter" [photoTags]="photosTags |async"></app-photogroup-list>
 
 <hr>
 

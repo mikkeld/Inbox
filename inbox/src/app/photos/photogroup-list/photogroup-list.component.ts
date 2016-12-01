@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {IPhoto} from "../shared/photo";
 
 @Component({
@@ -8,8 +8,8 @@ import {IPhoto} from "../shared/photo";
 })
 export class PhotogroupListComponent implements OnInit {
 
-  @Input()
-  photoTags: any[];
+  @Input() photoTags: string[];
+  @Input() filter: string;
 
   constructor() { }
 

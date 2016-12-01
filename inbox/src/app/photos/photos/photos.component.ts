@@ -3,6 +3,7 @@ import {PhotosService} from "../shared/photos.service";
 import {Photo, IPhoto} from '../shared/photo';
 import {FirebaseListObservable} from "angularfire2";
 import {ActivatedRoute} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-photos',
@@ -11,15 +12,20 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PhotosComponent implements OnInit {
 
-  photos: FirebaseListObservable<IPhoto[]>;
+  photos: Observable<IPhoto[]>;
   photosTags: any;
+  filter: string;
+  private sub: any;
 
   constructor(private photoService: PhotosService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.photos = this.photoService.getAllPhotos();
-    this.photosTags = this.photoService.getNumberImages(3);
-    console.log(this.route.snapshot.url[0].path)
+    this.sub = this.route.params.subscribe(params => {
+      this.filter = params['filter'];
+    });
+    this.photos = this.photoService.getVisiblePhotos(this.filter);
+    this.photosTags = this.photoService.getNumberImages(5);
+
   }
 
   private createThreePhotos(): void {
@@ -31,6 +37,10 @@ export class PhotosComponent implements OnInit {
       this.photoService.createPhoto(new Photo(DATE, TAGS, IMGPATH));
       console.log(`Image ${i} created`);
     }
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }

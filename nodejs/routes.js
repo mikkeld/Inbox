@@ -22,7 +22,7 @@ let routes = function(imageUploader, cloudVision, firebaseClient) {
                             if(err) {
                                 console.log(err);
                             } else {
-                                res.sendStatus(200);
+                                res.send(context);
                             }
                         });
                     }

@@ -2,3 +2,12 @@
   width:100%;
   height: auto;
 }
+
+.image-group-link {
+  color: dimgrey;
+  cursor: pointer;
+}
+
+.active-group {
+  font-weight: bold;
+}

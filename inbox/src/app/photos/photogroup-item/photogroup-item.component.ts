@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Router} from '@angular/router';
+import {filter} from "rxjs/operator/filter";
 
 @Component({
   selector: 'app-photogroup-item',
@@ -6,13 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./photogroup-item.component.css']
 })
 export class PhotogroupItemComponent implements OnInit {
+  @Input() photoTag: string;
+  @Input() filter: string;
 
-  @Input()
-  photoTag: any;
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  public filterImagesFromRoute(tag: string): void {
+    if(this.filter == tag) {
+      this.router.navigate(['/photos']); //Navigate to root photo folder
+    } else {
+      this.router.navigate(['/photos', tag]); //Filter current tag
+    }
+  }
 }

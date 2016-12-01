@@ -19,8 +19,3 @@ class Firebase {
 }
 
 module.exports = Firebase;
-
-// let emailRef = firebase.database().ref('emails/Imf4nFal01MofFYqOe9I8LcfhX22');
-// emailRef.on('child_added', (data) => {
-//     console.log(data.val());
-// });

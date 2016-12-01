@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71050d13-0a48-4cb2-a188-20471397e7ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-item/photogroup-item.component.css" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-item/photogroup-item.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-item/photogroup-item.component.html" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-item/photogroup-item.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-item/photogroup-item.component.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-item/photogroup-item.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-list/photogroup-list.component.html" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-list/photogroup-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-list/photogroup-list.component.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photogroup-list/photogroup-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photos-routing.module.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photos-routing.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.html" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/shared/file-upload.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/shared/file-upload.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodejs/routes.js" afterPath="$PROJECT_DIR$/nodejs/routes.js" />
-    </list>
+    <list default="true" id="71050d13-0a48-4cb2-a188-20471397e7ca" name="Default" comment="" />
     <ignored path="Inbox.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -591,12 +578,12 @@
       <workItem from="1479980388462" duration="9000" />
       <workItem from="1479980425333" duration="28219000" />
       <workItem from="1480072652596" duration="3397000" />
-      <workItem from="1480092790558" duration="43460000" />
+      <workItem from="1480092790558" duration="43540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174340000" />
+    <option name="totallyTimeSpent" value="174420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1421" height="797" extended-state="0" />

@@ -8,9 +8,9 @@ const visionClient = vision({
 class Vision {
     constructor() { }
 
-    getLabelsForImage(image) {
+    getLabelsForImage(imagePath) {
         return new Promise((resolve, reject) => {
-            visionClient.detectLabels('./img1.jpg', (error, annotations) => {
+            visionClient.detectLabels(imagePath, (error, annotations) => {
                 if(error) reject(error);
                 resolve(annotations);
             })

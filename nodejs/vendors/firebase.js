@@ -8,7 +8,17 @@ const config = {
 };
 firebase.initializeApp(config);
 
-module.exports = firebase;
+class Firebase {
+    constructor(storageRef) {
+        this.ref = firebase.database().ref(storageRef);
+    }
+
+    insertItem(item) {
+        this.ref.push().set(item);
+    }
+}
+
+module.exports = Firebase;
 
 // let emailRef = firebase.database().ref('emails/Imf4nFal01MofFYqOe9I8LcfhX22');
 // emailRef.on('child_added', (data) => {

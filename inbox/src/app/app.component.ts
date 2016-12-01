@@ -11,6 +11,8 @@ import { EmailService } from './emails/shared/email.service';
 })
 export class AppComponent implements OnInit {
 
+  loading: boolean = true;
+
   constructor(
     private authService: AuthService,
     private emailService: EmailService
@@ -31,5 +33,6 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+
 
 }

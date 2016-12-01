@@ -1,0 +1,8 @@
+.right-padding-5 {
+  padding-right: 5px;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}

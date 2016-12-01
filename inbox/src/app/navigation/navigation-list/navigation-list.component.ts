@@ -7,7 +7,16 @@ import {Component, Input} from '@angular/core';
 })
 export class NavigationListComponent {
 
-  @Input()
-  unreadEmailCount: number;
+  @Input() unreadEmailCount: number;
+  drawer: any;
+
+  constructor() {
+    let MaterialLayout: any;
+    this.drawer = document.querySelector('.mdl-layout');
+  }
+
+  toggleDrawer() {
+    this.drawer.MaterialLayout.toggleDrawer();
+  }
 
 }

@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Photo, IPhoto } from '../shared/photo';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import {Observable} from "rxjs";
+
 
 @Injectable()
 export class PhotosService {
 
-  constructor(private af: AngularFire) { }
+  constructor(private af: AngularFire) {
+    window["foo"] = this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22');
+
+  }
 
   public createPhoto(photo: Photo): void {
     this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
@@ -14,6 +19,15 @@ export class PhotosService {
 
   public getAllPhotos(): FirebaseListObservable<IPhoto[]> {
     return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22');
+  }
+
+  public getVisiblePhotos(filter: string): Observable<IPhoto[]> {
+    if(filter) {
+      return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
+        .map(photos => photos.filter(photo => photo.tags.indexOf(filter) > -1));
+    } else {
+      return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22');
+    }
   }
 
   public getNumberImages(numberImages: number): any {

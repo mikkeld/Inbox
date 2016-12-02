@@ -1,6 +1,8 @@
 <file-upload></file-upload>
-<app-photogroup-list [filter]="filter" [photoTags]="photosTags |async"></app-photogroup-list>
+<app-image-search class="search-container"></app-image-search>
+<app-photogroup-list [filter]="filter | async" [photoTags]="photosTags |async"></app-photogroup-list>
 
 <hr>
 
 <app-photo-list [photos]="photos | async"></app-photo-list>
+{{(filter2 | async)}}

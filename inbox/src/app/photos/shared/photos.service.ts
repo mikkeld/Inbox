@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Photo, IPhoto } from '../shared/photo';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import {Observable} from "rxjs";
-
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PhotosService {
@@ -15,10 +15,6 @@ export class PhotosService {
   public createPhoto(photo: Photo): void {
     this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
       .push(photo)
-  }
-
-  public getAllPhotos(): FirebaseListObservable<IPhoto[]> {
-    return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22');
   }
 
   public getVisiblePhotos(filter: string): Observable<IPhoto[]> {

@@ -1,1 +1,12 @@
-<input #search type="text" (keyup)="searchTerm(search.value)">
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <input #searchBox  class="mdl-textfield__input searchbox" type="text" (keyup)="search(searchBox.value)" id="searchbox">
+  <label class="mdl-textfield__label" for="searchbox">Search...</label>
+</div>
+<i class="material-icons">search</i>
+<div class="demo-list-action mdl-list auto-suggest-field">
+  <div (click)="goToRoute(tag)" class="mdl-list__item" *ngFor="let tag of tags | async">
+          <span class="mdl-list__item-primary-content">
+            <span>{{ tag }}</span>
+          </span>
+  </div>
+</div>

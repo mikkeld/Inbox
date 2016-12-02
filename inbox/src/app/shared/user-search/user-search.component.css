@@ -1,0 +1,8 @@
+.search-container {
+  position:absolute;
+  z-index: 10;
+  top:55px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid gainsboro;
+}

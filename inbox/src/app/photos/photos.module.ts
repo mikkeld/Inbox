@@ -9,6 +9,8 @@ import { PhotogroupItemComponent } from './photogroup-item/photogroup-item.compo
 import { PhotosComponent } from './photos/photos.component';
 import {FileUploadComponent} from "./shared/file-upload";
 import {FileUploadService} from './shared/file-upload.service';
+import { ImageSearchComponent } from './image-search/image-search.component';
+import {ImageSearchService} from "./image-search/image-search.service";
 
 
 @NgModule({
@@ -21,15 +23,17 @@ import {FileUploadService} from './shared/file-upload.service';
     PhotogroupListComponent,
     PhotogroupItemComponent,
     PhotosComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ImageSearchComponent
   ],
   providers: [
     PhotosService,
-    FileUploadService
+    FileUploadService,
+    ImageSearchService
   ]
 })
 
 export class PhotosModule { }
 
-export {PhotosService, FileUploadService}
+export {PhotosService, FileUploadService, ImageSearchService}
 

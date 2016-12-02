@@ -1,3 +1,24 @@
 .inline {
   display: inline;
 }
+
+.searchbox {
+  width: 500px;
+  background: white;
+  border:solid 1px #d9d9d9;
+}
+
+.search-container {
+  position: relative;
+}
+
+:host /deep/ .auto-suggest-field {
+  position:absolute;
+  left: 0px;
+  top: 20px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid gainsboro;
+}
+
+

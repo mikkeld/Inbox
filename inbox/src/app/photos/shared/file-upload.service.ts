@@ -8,8 +8,13 @@ export class FileUploadService {
   constructor(private http: Http) { }
 
   public uploadAndAnnotate(formData: FormData): Observable<any> {
+    console.log("Sanity Check 0")
     return this.http.post('http://localhost:8000/upload', formData)
-      .map((res: Response) => res.json())
+      // .map((res: Response) => res.json())
+      .map(res => {
+        console.log("Sanity Check")
+        console.log(res)
+      })
       .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
   }
 

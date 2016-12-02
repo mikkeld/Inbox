@@ -4,7 +4,7 @@ import {IPhoto} from "../shared/photo";
 @Component({
   selector: 'album-select',
   template: '<a (click)="toggleImageSelect(photo)" [ngClass]="{selected: selected}"><i class="material-icons">check_circle</i></a>',
-  styles: ['a { color: darkgray; cursor: pointer} .selected { color: deepskyblue; } ']
+  styles: ['a { color: darkgray; cursor: pointer} .selected { color: royalblue; } ']
 })
 export class AlbumSelectComponent {
   @Input() photo: IPhoto;

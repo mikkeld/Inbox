@@ -14,7 +14,7 @@ class Firebase {
     }
 
     insertItem(item) {
-        this.ref.push().set(item);
+        return this.ref.push().set(item);
     }
 }
 

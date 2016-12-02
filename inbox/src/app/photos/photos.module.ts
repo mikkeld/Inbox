@@ -11,7 +11,7 @@ import {FileUploadComponent} from "./shared/file-upload";
 import {FileUploadService} from './shared/file-upload.service';
 import { ImageSearchComponent } from './image-search/image-search.component';
 import {ImageSearchService} from "./image-search/image-search.service";
-
+import {AlbumSelectComponent} from './album/album-select.component';
 
 @NgModule({
   imports: [
@@ -24,7 +24,8 @@ import {ImageSearchService} from "./image-search/image-search.service";
     PhotogroupItemComponent,
     PhotosComponent,
     FileUploadComponent,
-    ImageSearchComponent
+    ImageSearchComponent,
+    AlbumSelectComponent
   ],
   providers: [
     PhotosService,

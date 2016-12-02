@@ -3,8 +3,8 @@ import { Http } from '@angular/http';
 import {FileUploadService} from "./file-upload.service";
 @Component({
   selector: 'file-upload',
-  template: `<input hidden #fileInput type="file" name="image" [attr.multiple]="multiple ? true : null" (change)="upload()" (click)="onChange($event)" >
-             <button (click)="showImageBrowseDlg()" class="inline" class="mdl-button mdl-js-button mdl-button--primary">UPLOAD</button>`
+  template: `<input hidden #fileInput type="file" name="image" [attr.multiple]="multiple ? true : null" (change)="upload()">
+             <button (click)="showImageBrowseDlg()" class="mdl-button mdl-js-button mdl-button--primary inline">UPLOAD</button>`
 })
 export class FileUploadComponent {
   @ViewChild('fileInput') fileInput:ElementRef;
@@ -37,6 +37,5 @@ export class FileUploadComponent {
     this.renderer.invokeElementMethod(
       this.fileInput.nativeElement, 'dispatchEvent', [event]);
   }
-
 
 }

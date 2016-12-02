@@ -15,8 +15,11 @@ export class PhotosComponent implements OnInit {
   photos: Observable<IPhoto[]>;
   photosTags: Observable<IPhotoTag[]>;
   filter: Observable<any>;
+  private selectedPhotos: IPhoto[];
 
-  constructor(private photoService: PhotosService, private route: ActivatedRoute) { }
+  constructor(private photoService: PhotosService, private route: ActivatedRoute) {
+    this.selectedPhotos = [];
+  }
 
   ngOnInit() {
     this.filter = this.route.params
@@ -24,6 +27,16 @@ export class PhotosComponent implements OnInit {
     this.photos = this.filter.
       switchMap(filter => this.photoService.getVisiblePhotos(filter));
     this.photosTags = this.photoService.getNumberImages(5);
+  }
+
+  toggleImageSelect(photo: IPhoto): void {
+    let index = this.selectedPhotos.indexOf(photo);
+    if(index === -1) {
+      this.selectedPhotos.push(photo)
+    } else {
+      this.selectedPhotos.splice(index, 1);
+    }
+    console.log(this.selectedPhotos);
   }
 
 }

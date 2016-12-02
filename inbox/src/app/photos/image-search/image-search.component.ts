@@ -33,9 +33,13 @@ export class ImageSearchComponent implements OnInit {
   }
 
   public goToRoute(tag: string): void {
+    this.resetSearchbar();
+    this.router.navigate(['/photos', tag]);
+  }
+
+  private resetSearchbar(): void {
     this.searchbox.nativeElement.value = "";
     this.searchTerms.next("");
-    this.router.navigate(['/photos', tag]);
   }
 
 }

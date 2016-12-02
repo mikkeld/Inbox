@@ -15,4 +15,3 @@ export class Photo implements IPhoto {
     return this.tags.indexOf(word) > -1;
   }
 }
-

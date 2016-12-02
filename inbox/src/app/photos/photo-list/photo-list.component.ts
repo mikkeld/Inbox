@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {IPhoto} from "../shared/photo";
+import {IPhotoAlbumItem, PhotoAlbumItem} from "../shared/album-photo";
 
 @Component({
   selector: 'app-photo-list',
@@ -8,9 +9,9 @@ import {IPhoto} from "../shared/photo";
   styleUrls: ['./photo-list.component.css']
 })
 export class PhotoListComponent implements OnInit {
-
-  @Input()
-  public photos: IPhoto[];
+  @Input() photos: IPhoto[];
+  @Input() selectedPhotos: IPhoto[];
+  @Output() select = new EventEmitter();
 
   constructor() { }
 

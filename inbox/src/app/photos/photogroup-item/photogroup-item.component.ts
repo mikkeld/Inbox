@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Router} from '@angular/router';
 import {filter} from "rxjs/operator/filter";
 
 @Component({
   selector: 'app-photogroup-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './photogroup-item.component.html',
   styleUrls: ['./photogroup-item.component.css']
 })

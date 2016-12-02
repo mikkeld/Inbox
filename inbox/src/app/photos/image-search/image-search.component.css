@@ -1,0 +1,7 @@
+.mouse-pointer {
+  cursor: pointer;
+}
+.mouse-pointer:hover {
+  background-color: whitesmoke;
+}
+

@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
 import {IPhoto} from "../shared/photo";
 
 @Component({
   selector: 'app-photo-list',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './photo-list.component.html',
   styleUrls: ['./photo-list.component.css']
 })

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Photo, IPhoto } from '../shared/photo';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import {Observable} from "rxjs";
+import { IPhotoTag, PhotoTag } from '../shared/photo-tag';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -26,16 +27,15 @@ export class PhotosService {
     }
   }
 
-  public getNumberImages(numberImages: number): any {
+  public getNumberImages(numberImages: number): Observable<IPhotoTag[]> {
     return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
       .map(photos => {
         return this.sortDict(this.wordCount(photos)).slice(0, numberImages)
           .map(sortedArr => {
-            let result = {};
-            result['tag'] = sortedArr[0];
-            result['tagCount'] = sortedArr[1];
-            result['image'] = this.findFirstPhoto(sortedArr[0], photos);
-            return result;
+            let tag = sortedArr[0];
+            let tagCount = sortedArr[1];
+            let image = this.findFirstPhoto(sortedArr[0], photos);
+            return new PhotoTag(tag, image, tagCount);
           });
       })
   }

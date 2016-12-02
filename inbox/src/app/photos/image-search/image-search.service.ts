@@ -6,7 +6,7 @@ import {IPhoto} from "../shared/photo";
 @Injectable()
 export class ImageSearchService {
 
-  public tags: Observable<string[]>;
+  private tags: Observable<string[]>;
 
   constructor(private af: AngularFire) {
     this.tags = this.uniqueCategories();

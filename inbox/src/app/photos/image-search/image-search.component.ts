@@ -1,6 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {Subject, Observable} from "rxjs";
-import {IPhoto} from "../shared/photo";
 import {ImageSearchService} from "./image-search.service";
 import {Router} from "@angular/router";
 
@@ -10,6 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./image-search.component.css']
 })
 export class ImageSearchComponent implements OnInit {
+  @ViewChild('searchBox') searchbox: ElementRef;
   private searchTerms = new Subject<string>();
   tags: Observable<string[]>;
 
@@ -33,6 +33,7 @@ export class ImageSearchComponent implements OnInit {
   }
 
   public goToRoute(tag: string): void {
+    this.searchbox.nativeElement.value = "";
     this.searchTerms.next("");
     this.router.navigate(['/photos', tag]);
   }

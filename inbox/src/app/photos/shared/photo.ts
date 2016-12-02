@@ -16,9 +16,3 @@ export class Photo implements IPhoto {
   }
 }
 
-export class PhotoTagItem extends Photo {
-  constructor(date: number, tags: string[], imgPath: string) {
-    super(date, tags, imgPath)
-  }
-
-}

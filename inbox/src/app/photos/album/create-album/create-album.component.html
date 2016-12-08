@@ -1,6 +1,11 @@
-<div class="mdl-textfield mdl-js-textfield full-length">
-  <input class="mdl-textfield__input" type="text" placeholder="Name your new album...">
-</div>
+<form #createAlbumForm="ngForm" (ngSubmit)="createAlbum(createAlbumForm.value)">
+  <div class="mdl-textfield mdl-js-textfield full-length">
+    <input ngModel id="title" name="title" class="mdl-textfield__input" type="text" placeholder="Name your new album...">
+  </div>
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--primary">
+    Create Album
+  </button>
+</form>
 
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--4-col photo-list" *ngFor="let photo of selectedPhotos">

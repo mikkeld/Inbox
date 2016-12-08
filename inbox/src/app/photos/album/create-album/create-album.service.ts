@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Subject} from "rxjs";
 import {IPhoto} from "../../shared/photo";
 
 @Injectable()
 export class CreateAlbumService {
+
+  constructor() {
+
+  }
 
   private selectedPhotos: IPhoto[];
 
@@ -14,5 +17,6 @@ export class CreateAlbumService {
   public getSelectedPhotos(): IPhoto[] {
     return this.selectedPhotos;
   }
+
 
 }

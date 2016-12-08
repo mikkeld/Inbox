@@ -1,20 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import {CreateAlbumService} from "./create-album.service";
-import {IPhoto} from "../../shared/photo";
+import {IPhoto, Photo} from "../../shared/photo";
+import {Album} from "../../shared/album";
+import {AlbumService} from "../../shared/album.service";
+
 
 @Component({
   selector: 'app-create-album',
   templateUrl: './create-album.component.html',
   styleUrls: ['./create-album.component.css']
 })
-export class CreateAlbumComponent implements OnInit {
+export class CreateAlbumComponent {
   selectedPhotos: IPhoto[];
 
-  constructor(private createAlbumService: CreateAlbumService) {
+  constructor(private createAlbumService: CreateAlbumService, private albumService: AlbumService) {
     this.selectedPhotos = this.createAlbumService.getSelectedPhotos();
   }
 
-  ngOnInit() {
+  public createAlbum(formValue: any): void {
+    let album = new Album(formValue.title, this.removeImgKey());
+
+    this.albumService.createAlbum(album)
+  }
+
+  private removeImgKey(): Photo[] {
+    let photos = [];
+    for(let photo of this.selectedPhotos) {
+      photos.push(new Photo(photo.date, photo.tags, photo.imgPath));
+    }
+    return photos
   }
 
 }

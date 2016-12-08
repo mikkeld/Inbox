@@ -9,7 +9,6 @@ import 'rxjs/add/operator/toPromise';
 export class PhotosService {
 
   constructor(private af: AngularFire) {
-    window["foo"] = this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22');
 
   }
 

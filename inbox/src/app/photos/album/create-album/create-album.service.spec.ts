@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { AlbumService } from '../shared/album.service';
+import { CreateAlbumService } from './create-album.service';
 
-describe('Service: Album', () => {
+describe('Service: CreateAlbum', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AlbumService]
+      providers: [CreateAlbumService]
     });
   });
 
-  it('should ...', inject([AlbumService], (service: AlbumService) => {
+  it('should ...', inject([CreateAlbumService], (service: CreateAlbumService) => {
     expect(service).toBeTruthy();
   }));
 });

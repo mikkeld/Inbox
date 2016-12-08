@@ -15,6 +15,7 @@ export class PhotosComponent implements OnInit {
   photos: Observable<IPhoto[]>;
   photosTags: Observable<IPhotoTag[]>;
   filter: Observable<any>;
+  albumSelectBarShowing: boolean = false;
   private selectedPhotos: IPhoto[];
 
   constructor(private photoService: PhotosService, private route: ActivatedRoute) {
@@ -36,7 +37,17 @@ export class PhotosComponent implements OnInit {
     } else {
       this.selectedPhotos.splice(index, 1);
     }
+    this.setAlbumSelectBarShowing();
     console.log(this.selectedPhotos);
+  }
+
+  clearSelect(): void {
+    this.selectedPhotos = [];
+    this.setAlbumSelectBarShowing();
+  }
+
+  private setAlbumSelectBarShowing(): void {
+    this.albumSelectBarShowing = !!this.selectedPhotos.length
   }
 
 }

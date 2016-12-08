@@ -1,8 +1,9 @@
+<app-album-select-bar *ngIf="albumSelectBarShowing" (close)="clearSelect()" [selectedPhotos]="selectedPhotos" class="album-select-bar"></app-album-select-bar>
 <file-upload></file-upload>
 <app-image-search class="search-container"></app-image-search>
 <app-photogroup-list [filter]="filter | async" [photoTags]="photosTags |async"></app-photogroup-list>
 
 <hr>
 
-<app-photo-list (select)=toggleImageSelect($event) [selectedPhotos]="selectedPhotos" [photos]="photos | async"></app-photo-list>
+<app-photo-list (select)="toggleImageSelect($event)" [selectedPhotos]="selectedPhotos" [photos]="photos | async"></app-photo-list>
 {{(filter2 | async)}}

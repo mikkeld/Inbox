@@ -12,6 +12,9 @@ import {FileUploadService} from './shared/file-upload.service';
 import { ImageSearchComponent } from './image-search/image-search.component';
 import {ImageSearchService} from "./image-search/image-search.service";
 import {AlbumSelectComponent} from './album/album-select.component';
+import { AlbumSelectBarComponent } from './album/album-select-bar/album-select-bar.component';
+import { CreateAlbumComponent } from './album/create-album/create-album.component';
+import { CreateAlbumService } from './album/create-album/create-album.service';
 
 @NgModule({
   imports: [
@@ -25,16 +28,19 @@ import {AlbumSelectComponent} from './album/album-select.component';
     PhotosComponent,
     FileUploadComponent,
     ImageSearchComponent,
-    AlbumSelectComponent
+    AlbumSelectComponent,
+    AlbumSelectBarComponent,
+    CreateAlbumComponent
   ],
   providers: [
     PhotosService,
     FileUploadService,
-    ImageSearchService
+    ImageSearchService,
+    CreateAlbumService
   ]
 })
 
 export class PhotosModule { }
 
-export {PhotosService, FileUploadService, ImageSearchService}
+export {PhotosService, FileUploadService, ImageSearchService, CreateAlbumService}
 

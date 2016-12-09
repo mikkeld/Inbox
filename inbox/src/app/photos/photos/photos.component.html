@@ -1,9 +1,14 @@
-<app-album-select-bar *ngIf="albumSelectBarShowing" (close)="clearSelect()" [selectedPhotos]="selectedPhotos" class="album-select-bar"></app-album-select-bar>
-<file-upload></file-upload>
-<app-image-search class="search-container"></app-image-search>
-<app-photogroup-list [filter]="filter | async" [photoTags]="photosTags |async"></app-photogroup-list>
+<div class="photo-app">
+  <app-photo-nav-bar class="photo-nav-bar"></app-photo-nav-bar>
+  <div class="photo-app-content">
+    <file-upload></file-upload>
+    <app-image-search class="search-container"></app-image-search>
+    <app-photogroup-list [filter]="filter | async" [photoTags]="photosTags |async"></app-photogroup-list>
 
-<hr>
+    <hr>
 
-<app-photo-list (select)="toggleImageSelect($event)" [selectedPhotos]="selectedPhotos" [photos]="photos | async"></app-photo-list>
-{{(filter2 | async)}}
+    <app-album-select-bar *ngIf="albumSelectBarShowing" (close)="clearSelect()" [selectedPhotos]="selectedPhotos" class="album-select-bar"></app-album-select-bar>
+
+    <app-photo-list (select)="toggleImageSelect($event)" [selectedPhotos]="selectedPhotos" [photos]="photos | async"></app-photo-list>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.icon-font {
+  font-size: 9px;
+  text-align: center;
+  width: 100%;
+  margin-top: -5px;
+  color:darkgrey;
+}
+
+.material-icons {
+  font-size: 30px;
+  color:darkgrey;
+}
+
+.photo-nav-bar-container {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.active {
+  color: deepskyblue;
+}
+
+.active .material-icons {
+  color: royalblue;
+}
+
+.active .icon-font {
+  color: royalblue;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+

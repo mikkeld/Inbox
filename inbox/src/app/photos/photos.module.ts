@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import {PhotoListComponent} from "./photo-list/photo-list.component";
 import {PhotosService} from './shared/photos.service';
@@ -16,11 +17,16 @@ import { AlbumSelectBarComponent } from './album/album-select-bar/album-select-b
 import { CreateAlbumComponent } from './album/create-album/create-album.component';
 import { CreateAlbumService } from './album/create-album/create-album.service';
 import { AlbumService } from "./shared/album.service";
+import { AlbumListComponent } from './album/album-list/album-list.component';
+import { AlbumItemComponent } from './album/album-item/album-item.component';
+import { AlbumComponent } from './album/album/album.component';
+import { PhotoNavBarComponent } from './photo-nav-bar/photo-nav-bar.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   declarations: [
     PhotoListComponent,
@@ -31,7 +37,11 @@ import { AlbumService } from "./shared/album.service";
     ImageSearchComponent,
     AlbumSelectComponent,
     AlbumSelectBarComponent,
-    CreateAlbumComponent
+    CreateAlbumComponent,
+    AlbumListComponent,
+    AlbumItemComponent,
+    AlbumComponent,
+    PhotoNavBarComponent
   ],
   providers: [
     PhotosService,

@@ -1,7 +1,16 @@
 .album-select-bar {
+  font-size: 36px;
   height: 50px;
   width: 100%;
-  background-color: cornflowerblue;
-  color: white;
+}
+
+a {
+  color: inherit;
+}
+
+.material-icons {
+  font-size: 40px;
+  color: deepskyblue;
+  cursor: pointer;
 }
 

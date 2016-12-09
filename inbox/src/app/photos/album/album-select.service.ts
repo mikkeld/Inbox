@@ -3,10 +3,18 @@ import {IPhoto} from "../shared/photo";
 
 @Injectable()
 export class AlbumSelectService {
-  selectedPhotos: IPhoto[] = [];
+  private selectedPhotos: IPhoto[] = [];
 
   public addSelectedPhoto(photo: IPhoto): void {
     this.selectedPhotos.push(photo)
+  }
+
+  public addSelectedPhotos(photos: IPhoto[]): void {
+    this.selectedPhotos = photos;
+  }
+
+  public getSelectedPhotos(): IPhoto[] {
+    return this.selectedPhotos;
   }
 
 }

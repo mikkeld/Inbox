@@ -1,7 +1,7 @@
 import {Component, OnInit, ElementRef, Input, Output, EventEmitter} from '@angular/core';
 import {IPhoto} from "../../shared/photo";
 import {Router} from "@angular/router";
-import {CreateAlbumService} from "../create-album/create-album.service";
+import {AlbumSelectService} from "../album-select.service";
 
 @Component({
   selector: 'app-album-select-bar',
@@ -12,7 +12,7 @@ export class AlbumSelectBarComponent implements OnInit {
   @Input() selectedPhotos: IPhoto[];
   @Output() close = new EventEmitter();
 
-  constructor(private router: Router, private createAlbumService: CreateAlbumService) { }
+  constructor(private router: Router, private albumSelectService: AlbumSelectService) { }
 
   ngOnInit() { }
 
@@ -21,7 +21,7 @@ export class AlbumSelectBarComponent implements OnInit {
   }
 
   public gotoCreateAlbum(): void {
-    this.createAlbumService.addSelectedPhotos(this.selectedPhotos);
+    this.albumSelectService.addSelectedPhotos(this.selectedPhotos);
     this.router.navigate([('/create-album')])
   }
 

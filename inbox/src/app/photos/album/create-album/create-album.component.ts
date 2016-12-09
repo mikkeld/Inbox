@@ -4,6 +4,7 @@ import {IPhoto, Photo} from "../../shared/photo";
 import {Album} from "../../shared/album";
 import {AlbumService} from "../../shared/album.service";
 import {Router} from "@angular/router";
+import {AlbumSelectService} from "../album-select.service";
 
 
 @Component({
@@ -14,8 +15,8 @@ import {Router} from "@angular/router";
 export class CreateAlbumComponent {
   selectedPhotos: IPhoto[];
 
-  constructor(private createAlbumService: CreateAlbumService, private albumService: AlbumService, private router: Router) {
-    this.selectedPhotos = this.createAlbumService.getSelectedPhotos();
+  constructor(private albumSelectService: AlbumSelectService, private albumService: AlbumService, private router: Router) {
+    this.selectedPhotos = this.albumSelectService.getSelectedPhotos();
   }
 
   public createAlbum(formValue: any): void {

@@ -1,0 +1,17 @@
+.responsive-image {
+  width:100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.mdl-cell {
+  width: 256px;
+  height: 256px;
+  box-sizing: border-box;
+  margin: 16px;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+}

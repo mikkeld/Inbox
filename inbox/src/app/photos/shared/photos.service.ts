@@ -26,6 +26,18 @@ export class PhotosService {
     }
   }
 
+  public getPhotoForKey(key: string): FirebaseObjectObservable<IPhoto> {
+    window['af'] = this.af.database.list(`photos/Imf4nFal01MofFYqOe9I8LcfhX22`, {
+      query: {
+        orderByKey: true,
+        startsAt: key,
+        limitToFirst: 2
+      }
+
+    });
+    return this.af.database.object(`photos/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`)
+  }
+
   public getNumberImages(numberImages: number): Observable<IPhotoTag[]> {
     return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
       .map(photos => {

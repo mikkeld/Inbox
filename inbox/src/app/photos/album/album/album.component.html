@@ -1,2 +1,7 @@
-<app-album-list [albums]="allAlbums |async"></app-album-list>
+<div class="photo-app">
+  <app-photo-nav-bar class="photo-nav-bar"></app-photo-nav-bar>
+  <div class="photo-app-content">
+    <app-album-list [albums]="allAlbums |async"></app-album-list>
+  </div>
+</div>
 

@@ -1,0 +1,8 @@
+<a routerLink="/albums"><i class="material-icons backspace">keyboard_backspace</i></a>
+
+<div class="header">
+  <h1>{{ (album | async)?.title }}</h1>
+  <span class="date">2016-01-01</span>
+</div>
+
+<app-album-detail-list [photos]="(album | async)?.photos"></app-album-detail-list>

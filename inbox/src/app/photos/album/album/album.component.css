@@ -1,0 +1,10 @@
+.photo-nav-bar {
+  top: 0px;
+  left: 0px;
+  width: 65px;
+  float: left;
+}
+
+.photo-app-content {
+  margin: 0 0 0 65px;
+}

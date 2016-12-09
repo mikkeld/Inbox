@@ -1,0 +1,10 @@
+.photo-list {
+  position: relative;
+}
+
+.responsive-image {
+  width:100%;
+  height: auto;
+  cursor: pointer;
+}
+

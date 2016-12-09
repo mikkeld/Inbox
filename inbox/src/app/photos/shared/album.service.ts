@@ -16,4 +16,8 @@ export class AlbumService {
     return this.af.database.list('albums/Imf4nFal01MofFYqOe9I8LcfhX22')
   }
 
+  public getAlbumForKey(key: string): FirebaseObjectObservable<IAlbum> {
+    return this.af.database.object(`albums/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`)
+  }
+
 }

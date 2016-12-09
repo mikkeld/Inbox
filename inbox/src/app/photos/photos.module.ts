@@ -21,6 +21,10 @@ import { AlbumListComponent } from './album/album-list/album-list.component';
 import { AlbumItemComponent } from './album/album-item/album-item.component';
 import { AlbumComponent } from './album/album/album.component';
 import { PhotoNavBarComponent } from './photo-nav-bar/photo-nav-bar.component';
+import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
+import { AlbumDetailComponent } from './album/album-detail/album-detail.component';
+import { AlbumDetailListComponent } from './album/album-detail-list/album-detail-list.component';
+import { AlbumDetailItemComponent } from './album/album-detail-item/album-detail-item.component';
 
 @NgModule({
   imports: [
@@ -41,7 +45,11 @@ import { PhotoNavBarComponent } from './photo-nav-bar/photo-nav-bar.component';
     AlbumListComponent,
     AlbumItemComponent,
     AlbumComponent,
-    PhotoNavBarComponent
+    PhotoNavBarComponent,
+    PhotoDetailComponent,
+    AlbumDetailComponent,
+    AlbumDetailListComponent,
+    AlbumDetailItemComponent
   ],
   providers: [
     PhotosService,

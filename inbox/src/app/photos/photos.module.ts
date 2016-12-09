@@ -25,6 +25,8 @@ import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 import { AlbumDetailComponent } from './album/album-detail/album-detail.component';
 import { AlbumDetailListComponent } from './album/album-detail-list/album-detail-list.component';
 import { AlbumDetailItemComponent } from './album/album-detail-item/album-detail-item.component';
+import { PhotoItemComponent } from './photo-item/photo-item.component';
+import { AlbumSelectService } from './album/album-select.service';
 
 @NgModule({
   imports: [
@@ -49,18 +51,20 @@ import { AlbumDetailItemComponent } from './album/album-detail-item/album-detail
     PhotoDetailComponent,
     AlbumDetailComponent,
     AlbumDetailListComponent,
-    AlbumDetailItemComponent
+    AlbumDetailItemComponent,
+    PhotoItemComponent
   ],
   providers: [
     PhotosService,
     FileUploadService,
     ImageSearchService,
     CreateAlbumService,
-    AlbumService
+    AlbumService,
+    AlbumSelectService
   ]
 })
 
 export class PhotosModule { }
 
-export {PhotosService, FileUploadService, ImageSearchService, CreateAlbumService, AlbumService}
+export {PhotosService, FileUploadService, ImageSearchService, CreateAlbumService, AlbumService, AlbumSelectService}
 

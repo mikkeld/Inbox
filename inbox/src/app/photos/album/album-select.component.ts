@@ -1,5 +1,6 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {IPhoto} from "../shared/photo";
+import {AlbumSelectService} from "./album-select.service";
 
 @Component({
   selector: 'album-select',
@@ -11,7 +12,10 @@ export class AlbumSelectComponent {
   @Input() selected: boolean;
   @Output() select = new EventEmitter();
 
+  constructor(private albumSelectService: AlbumSelectService) { }
+
   toggleImageSelect(photo: IPhoto): void {
+    this.albumSelectService.addSelectedPhoto(photo);
     this.select.emit(photo);
   }
 

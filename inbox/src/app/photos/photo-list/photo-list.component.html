@@ -1,6 +1,6 @@
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--4-col photo-list" *ngFor="let photo of photos">
-    <img [routerLink]="'/photos/detail/' + photo.$key" class="responsive-image" [src]="photo.imgPath">
-    <album-select (select)="select.emit($event)" [photo]="photo" [selected]="selectedPhotos.indexOf(photo) > -1" class="album-select"></album-select>
+    <app-photo-item [photo]="photo" [selected]="isSelected(photo)"></app-photo-item>
+    <album-select (select)="select.emit($event)" [photo]="photo" [selected]="isSelected(photo)" class="album-select"></album-select>
   </div>
 </div>

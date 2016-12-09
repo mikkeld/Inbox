@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter } from '@angular/core';
 import {IPhoto} from "../shared/photo";
 import {IPhotoAlbumItem, PhotoAlbumItem} from "../shared/album-photo";
 
@@ -8,14 +8,14 @@ import {IPhotoAlbumItem, PhotoAlbumItem} from "../shared/album-photo";
   templateUrl: './photo-list.component.html',
   styleUrls: ['./photo-list.component.css']
 })
-export class PhotoListComponent implements OnInit {
+export class PhotoListComponent {
   @Input() photos: IPhoto[];
   @Input() selectedPhotos: IPhoto[];
   @Output() select = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit() {
+  isSelected(photo: IPhoto): boolean {
+    return this.selectedPhotos.indexOf(photo) > -1;
   }
+
 
 }

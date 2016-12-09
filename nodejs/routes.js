@@ -18,13 +18,7 @@ let routes = function(imageUploader, cloudVision, firebaseClient) {
                 .then(annotations => {
                     context.tags = annotations;
                     if(context.tags && context.imgPath) {
-                        firebaseClient.insertItem(context)//, (err) => {
-                            // if(err) {
-                            //     console.log(err);
-                            // } else {
-                            //     res.send("works!");
-                            // }
-                        //});
+                        firebaseClient.insertItem(context)
                     }
                 })
                 .then(result => {

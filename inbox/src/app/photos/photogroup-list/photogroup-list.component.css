@@ -1,4 +1,11 @@
-.responsive-image {
-  width:100%;
-  height: auto;
+.mdl-cell {
+  width: 100px;
+  height: 130px;
+  box-sizing: border-box;
+  margin: 5px;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
 }

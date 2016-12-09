@@ -1,4 +1,5 @@
-<!--<a [routerLink]="['/photos', {filter: photoTag.image.tag }]">-->
-<a (click)="filterImagesFromRoute(photoTag.tag)" class="image-group-link" [ngClass]="{'active-group': filter == photoTag.tag}">
-  <img class="responsive-image"  [src]="photoTag.image.imgPath">{{photoTag.tag}}
-</a>
+<div>
+  <a (click)="filterImagesFromRoute(photoTag.tag)" class="image-group-link" [ngClass]="{'active-group': filter == photoTag.tag}">
+    <img class="responsive-image" [ngStyle]="{'background-image': 'url(' + photoTag.image.imgPath +')'}"><div>{{photoTag.tag}}</div>
+  </a>
+</div>

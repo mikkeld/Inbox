@@ -16,6 +16,7 @@ class Vision {
             })
         })
     }
+
 }
 
 module.exports = Vision;

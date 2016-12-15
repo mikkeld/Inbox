@@ -29,7 +29,11 @@ export class EmailService {
   getAllEmailsForRoute(route: string): FirebaseListObservable<IEmail[]> {
     switch(route) {
       case 'inbox':
-        return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`);
+        return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`, {
+          query: {
+            orderByChild: 'timestamp'
+          }
+        });
 
       case 'starred':
         return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`, {

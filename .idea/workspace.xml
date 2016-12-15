@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="71050d13-0a48-4cb2-a188-20471397e7ca" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.html" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inbox/src/app/photos/shared/photos.service.ts" afterPath="$PROJECT_DIR$/inbox/src/app/photos/shared/photos.service.ts" />
     </list>
     <ignored path="Inbox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,38 +29,7 @@
     <favorites_list name="Inbox" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="photo-detail.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="photos.service.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/shared/photos.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="photo-detail.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,11 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/shared/file-upload.service.ts" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/album/create-album/create-album.component.css" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/album/create-album/create-album.service.ts" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/shared/album.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-list/album-list.component.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album/album.component.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-item/album-item.component.ts" />
@@ -94,8 +63,6 @@
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/create-album/create-album.component.html" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-nav-bar/photo-nav-bar.component.css" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-nav-bar/photo-nav-bar.component.html" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.ts" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.html" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.css" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/shared/album.service.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-detail/album-detail.component.ts" />
@@ -107,7 +74,6 @@
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-detail/album-detail.component.css" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.html" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-select-bar/album-select-bar.component.css" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/shared/photos.service.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album/album.component.html" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album/album.component.css" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-select-bar/album-select-bar.component.html" />
@@ -124,7 +90,6 @@
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-item/photo-item.component.css" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-item/photo-item.component.html" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photos-routing.module.ts" />
-        <option value="$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-select.component.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-item/photo-item.component.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-list/photo-list.component.ts" />
@@ -133,6 +98,15 @@
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/album-select.service.ts" />
         <option value="$PROJECT_DIR$/inbox/src/app/photos/album/create-album/create-album.component.ts" />
         <option value="$PROJECT_DIR$/nodejs/vision.js" />
+        <option value="$PROJECT_DIR$/inbox/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/inbox/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/inbox/src/app/app.component.css" />
+        <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.ts" />
+        <option value="$PROJECT_DIR$/inbox/src/app/photos/shared/photo-group.service.ts" />
+        <option value="$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts" />
+        <option value="$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts" />
+        <option value="$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.html" />
+        <option value="$PROJECT_DIR$/inbox/src/app/photos/shared/photos.service.ts" />
       </list>
     </option>
   </component>
@@ -329,6 +303,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Inbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Inbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="photo-detail" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -490,12 +494,12 @@
       <workItem from="1481194859949" duration="38001000" />
       <workItem from="1481319528055" duration="1294000" />
       <workItem from="1481813900989" duration="11000" />
-      <workItem from="1481813934821" duration="518000" />
+      <workItem from="1481813934821" duration="4520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246388000" />
+    <option name="totallyTimeSpent" value="250390000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -508,25 +512,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1421" height="797" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24982406" sideWeight="0.4923664" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24982406" sideWeight="0.4923664" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.50246304" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2802198" sideWeight="0.49753696" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24982406" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.125" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24982406" sideWeight="0.50763357" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2802198" sideWeight="0.49753696" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,27 +554,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/album/album-detail/album-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/album/album-detail-item/album-detail-item.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/album/album-detail-list/album-detail-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/album/album-detail-list/album-detail-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -732,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photo-nav-bar/photo-nav-bar.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -782,24 +758,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="68" column="114" lean-forward="false" selection-start-line="68" selection-start-column="114" selection-end-line="68" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/shared/album.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -882,10 +844,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="61" lean-forward="false" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photos.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/shared/photo-group.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photos/photos.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="29" column="70" lean-forward="true" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -893,16 +907,20 @@
     <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/photo-detail/photo-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
+          <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inbox/src/app/photos/shared/photos.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="435">
+          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

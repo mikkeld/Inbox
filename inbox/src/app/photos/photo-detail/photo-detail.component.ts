@@ -11,12 +11,13 @@ import {PhotosService} from "../shared/photos.service";
 })
 export class PhotoDetailComponent implements OnInit {
   public photo: FirebaseObjectObservable<IPhoto>;
+  public key: string;
 
   constructor(private route: ActivatedRoute, private photoService: PhotosService) { }
 
   ngOnInit() {
-    let key = this.route.snapshot.params['id'];
-    this.photo = this.photoService.getPhotoForKey(key);
+    this.key = this.route.snapshot.params['id'];
+    this.photo = this.photoService.getPhotoForKey(this.key);
   }
 
 }

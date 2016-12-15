@@ -27,6 +27,7 @@ import { AlbumDetailListComponent } from './album/album-detail-list/album-detail
 import { AlbumDetailItemComponent } from './album/album-detail-item/album-detail-item.component';
 import { PhotoItemComponent } from './photo-item/photo-item.component';
 import { AlbumSelectService } from './album/album-select.service';
+import {PhotoGroupService} from "./shared/photo-group.service";
 
 @NgModule({
   imports: [
@@ -60,11 +61,12 @@ import { AlbumSelectService } from './album/album-select.service';
     ImageSearchService,
     CreateAlbumService,
     AlbumService,
-    AlbumSelectService
+    AlbumSelectService,
+    PhotoGroupService
   ]
 })
 
 export class PhotosModule { }
 
-export {PhotosService, FileUploadService, ImageSearchService, CreateAlbumService, AlbumService, AlbumSelectService}
+export {PhotosService, FileUploadService, ImageSearchService, CreateAlbumService, AlbumService, AlbumSelectService, PhotoGroupService}
 

@@ -1,4 +1,4 @@
 <a routerLink="/photos"><i class="material-icons backspace">keyboard_backspace</i></a>
-<a href=""><i class="material-icons previous">navigate_before</i></a>
+<a (click)="photoService.previousPhotoForKey(key)"><i class="material-icons previous">navigate_before</i></a>
 <a href=""><i class="material-icons next">navigate_next</i></a>
 <img class="responsive-image" [src]="(photo | async)?.imgPath">

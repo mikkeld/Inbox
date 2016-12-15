@@ -4,6 +4,7 @@ import {Photo, IPhoto} from '../shared/photo';
 import {PhotoTag, IPhotoTag } from '../shared/photo-tag';
 import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
+import {PhotoGroupService} from "../shared/photo-group.service";
 
 @Component({
   selector: 'app-photos',
@@ -18,7 +19,7 @@ export class PhotosComponent implements OnInit {
   albumSelectBarShowing: boolean = false;
   private selectedPhotos: IPhoto[];
 
-  constructor(private photoService: PhotosService, private route: ActivatedRoute) {
+  constructor(private photoService: PhotosService, private route: ActivatedRoute, private photoGroupService: PhotoGroupService) {
     this.selectedPhotos = [];
   }
 
@@ -27,7 +28,7 @@ export class PhotosComponent implements OnInit {
       .pluck('filter');
     this.photos = this.filter.
       switchMap(filter => this.photoService.getVisiblePhotos(filter));
-    this.photosTags = this.photoService.getNumberImages(5);
+    this.photosTags = this.photoGroupService.getNumberImages(5);
   }
 
   toggleImageSelect(photo: IPhoto): void {

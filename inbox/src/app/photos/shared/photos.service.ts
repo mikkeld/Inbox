@@ -27,59 +27,19 @@ export class PhotosService {
   }
 
   public getPhotoForKey(key: string): FirebaseObjectObservable<IPhoto> {
-    window['af'] = this.af.database.list(`photos/Imf4nFal01MofFYqOe9I8LcfhX22`, {
-      query: {
-        orderByKey: true,
-        startsAt: key,
-        limitToFirst: 2
-      }
-
-    });
     return this.af.database.object(`photos/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`)
   }
 
-  public getNumberImages(numberImages: number): Observable<IPhotoTag[]> {
-    return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
-      .map(photos => {
-        return this.sortDict(this.wordCount(photos)).slice(0, numberImages)
-          .map(sortedArr => {
-            let tag = sortedArr[0];
-            let tagCount = sortedArr[1];
-            let image = this.findFirstPhoto(sortedArr[0], photos);
-            return new PhotoTag(tag, image, tagCount);
-          });
-      })
-  }
-
-  private wordCount(photos: IPhoto[]): any {
-    let wordCount = {};
-    for(let photo of photos) {
-      for(let tag of photo.tags) {
-        if(wordCount[tag] != undefined) {
-          wordCount[tag] += 1;
-        } else {
-          wordCount[tag] = 1;
-        }
+  public previousPhotoForKey(key: string): void {
+    this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22', {
+      query: {
+        orderByChild: 'timestamp',
+        startsAt: 1480588440474,
+        limitToLast: 2
       }
-    }
-    return wordCount;
+    })
+      .single()
+      .do(res => console.log(res))
   }
 
-  private sortDict(dictionary: any): any[] {
-    return Object.keys(dictionary)
-      .map(key => {
-        return [key, dictionary[key]];
-      })
-      .sort((first, second) => {
-        return second[1] - first[1]
-      });
-  }
-
-  private findFirstPhoto(tag: string, photos: IPhoto[]): IPhoto {
-    for(let photo of photos) {
-      if(photo.tags.indexOf(tag) > -1) {
-        return photo
-      }
-    }
-  }
 }

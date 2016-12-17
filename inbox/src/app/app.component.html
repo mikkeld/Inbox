@@ -9,6 +9,16 @@
 
       <!-- Show logged in or logged out UI -->
       <user-or-login [currentUser]="currentUser | async"></user-or-login>
+      <button id="demo-menu-lower-right"
+              class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+      </button>
+
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+        <li (click)="logout()" class="mdl-menu__item">Logout</li>
+        <li class="mdl-menu__item">Profile</li>
+      </ul>
 
     </div>
   </header>

@@ -16,6 +16,7 @@ import {EmailRoutingModule} from "./emails/email-routing.module";
 import { UserOrLoginComponent } from './navigation/user-or-login/user-or-login.component';
 import { NavigationListComponent } from './navigation/navigation-list/navigation-list.component';
 import {PhotosRoutingModule} from "./photos/photos-routing.module";
+import { SignInComponent } from './auth/sign-in/sign-in.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFl2Lre7t7u-8cwtYUu0k3gjrD0iQ3cWs",
@@ -34,7 +35,8 @@ const myFirebaseAuthConfig = {
     AppComponent,
     UserSearchComponent,
     UserOrLoginComponent,
-    NavigationListComponent
+    NavigationListComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

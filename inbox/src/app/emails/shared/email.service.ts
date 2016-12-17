@@ -15,11 +15,10 @@ export class EmailService {
     this.emailUserPath = `/emails/${authService.id}`;
   }
 
-  composeEmail(title: string, content:string, receiver: IPerson): void {
-    console.log(this.authService.getUserInformation());
-    let from = new Person('Imf4nFal01MofFYqOe9I8LcfhX22', "Mikkel", "Dengsøe", "https://lh6.googleusercontent.com/-D3ZhLQkij2I/AAAAAAAAAAI/AAAAAAAAAAA/AGNl-OownkmptDpN_QjXHaRV7DOhtCverw/s96-c/photo.jpg");
+  composeEmail(title: string, content:string, receiver: IPerson): firebase.Promise<any> {
+    let from = this.authService.currentUser;
     let to = new Person(receiver.authId, receiver.firstName, receiver.lastName, receiver.profilePicturePath);
-    this.af.database.list(this.emailUserPath)
+    return this.af.database.list(`/emails/${receiver.authId}`)
       .push(new Email(to, from, Date.now(), content, title));
   }
 

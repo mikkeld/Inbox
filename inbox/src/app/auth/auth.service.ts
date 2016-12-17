@@ -29,6 +29,7 @@ export class AuthService {
 
   public getUserInformation(): Observable<Person> {
     return this.auth$.map(authInfo => {
+      if(!authInfo) return;
       return new Person(
         authInfo.auth.uid,
         authInfo.auth.displayName,

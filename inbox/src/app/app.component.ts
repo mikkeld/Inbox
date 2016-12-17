@@ -3,6 +3,7 @@ import { AuthService } from './auth/auth.service';
 import { Observable } from 'rxjs';
 import { Person } from './core/person';
 import { EmailService } from './emails/shared/email.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    // private emailService: EmailService
+    private router: Router
   ) { }
 
   unreadEmailCount: Observable<number>;
@@ -23,15 +24,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.authService.getUserInformation();
-    // this.unreadEmailCount = this.emailService.unreadEmailCount();
-  }
-
-  login() {
-    this.authService.login();
   }
 
   logout() {
     this.authService.logout();
+    this.router.navigate(['/']);
   }
 
 

@@ -1,4 +1,4 @@
-<div [routerLink]="album.$key" class="demo-card-image mdl-card mdl-shadow--2dp album-link" [ngStyle]="{'background-image': 'url(' + album.photos[0].imgPath +')'}">
+<div *ngIf="album.photos" [routerLink]="album.$key" class="demo-card-image mdl-card mdl-shadow--2dp album-link" [ngStyle]="{'background-image': 'url(' + album.photos[0].imgPath +')'}">
   <div class="mdl-card__title mdl-card--expand"></div>
   <div class="mdl-card__actions">
     <span class="demo-card-image__filename">{{ album.title }}</span>

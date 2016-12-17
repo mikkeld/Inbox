@@ -1,23 +1,29 @@
 import { Injectable } from '@angular/core';
 import {Album, IAlbum} from './album'
 import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from "angularfire2";
+import {AuthService} from "../../auth/auth.service";
 
 @Injectable()
 export class AlbumService {
 
-  constructor(private af: AngularFire) { }
+  private albumPath: string;
+
+  constructor(private af: AngularFire, private authService: AuthService) {
+    this.albumPath = `albums/${this.authService.id}`;
+
+  }
 
   public createAlbum(album: any): void {
-    this.af.database.list('albums/Imf4nFal01MofFYqOe9I8LcfhX22')
+    this.af.database.list(this.albumPath)
       .push(album)
   }
 
   public getAllAlbums(): FirebaseListObservable<IAlbum[]> {
-    return this.af.database.list('albums/Imf4nFal01MofFYqOe9I8LcfhX22')
+    return this.af.database.list(this.albumPath)
   }
 
   public getAlbumForKey(key: string): FirebaseObjectObservable<IAlbum> {
-    return this.af.database.object(`albums/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`)
+    return this.af.database.object(`${this.albumPath}/${key}`)
   }
 
 }

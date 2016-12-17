@@ -13,7 +13,6 @@ export class PhotosService {
 
   constructor(private af: AngularFire, private authService: AuthService) {
     this.photoPath = `photos/${this.authService.id}`;
-
   }
 
   public createPhoto(photo: Photo): void {

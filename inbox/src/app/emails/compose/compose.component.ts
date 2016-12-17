@@ -38,7 +38,8 @@ export class ComposeComponent implements OnInit {
   }
 
   sendEmail(emailForm: any): void {
-    this.emailService.composeEmail(emailForm.title, emailForm.content, this.receiver);
+    this.emailService.composeEmail(emailForm.title, emailForm.content, this.receiver)
+      .then(res => console.log(res));
     let inbox = ['inbox'];
     this.router.navigate(inbox);
   }

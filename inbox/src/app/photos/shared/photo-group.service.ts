@@ -3,14 +3,19 @@ import { IPhoto } from './photo';
 import { AngularFire } from 'angularfire2';
 import {Observable} from "rxjs";
 import { IPhotoTag, PhotoTag } from './photo-tag';
+import {AuthService} from "../../auth/auth.service";
 
 @Injectable()
 export class PhotoGroupService {
 
-  constructor(private af: AngularFire) { }
+  private photoGroupPath: string;
+
+  constructor(private af: AngularFire, private authService: AuthService) {
+    this.photoGroupPath = `photos/${this.authService.id}`;
+  }
 
   public getNumberImages(numberImages: number): Observable<IPhotoTag[]> {
-    return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
+    return this.af.database.list(this.photoGroupPath)
       .map(photos => {
         return this.sortDict(this.wordCount(photos)).slice(0, numberImages)
           .map(sortedArr => {

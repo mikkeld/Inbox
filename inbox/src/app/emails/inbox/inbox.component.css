@@ -23,3 +23,14 @@
 ul {
   width: 100%;
 }
+
+#user-pic {
+  position: relative;
+  float:left;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+}

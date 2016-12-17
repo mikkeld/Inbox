@@ -5,7 +5,8 @@
         <li *ngFor="let email of emails | async" class="mdl-list__item mdl-list__item--three-line email-list"
             (click)="gotoDetail(email, email.$key)">
           <span class="mdl-list__item-primary-content" [style.font-weight]="!email.read ? 'bold' : 'normal'">
-            <i class="material-icons mdl-list__item-avatar">person</i>
+            <!--<i class="material-icons mdl-list__item-avatar">person</i>-->
+            <img id="user-pic" [src]="email.sender.profilePicturePath">
             <span>{{ email.title }}</span>
             <span><small>{{ email.date | date }}</small></span>
             <span class="mdl-list__item-text-body">

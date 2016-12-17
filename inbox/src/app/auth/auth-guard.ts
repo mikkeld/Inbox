@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
         return !!authState })
       .do(authenticated => {
         if (!authenticated) {
-          this.router.navigate(['/compose']);
+          this.router.navigate(['/']);
         }
       });
   }

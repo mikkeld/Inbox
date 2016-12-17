@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFire, FirebaseAuthState, FirebaseAuth} from 'angularfire2';
-import { Person } from '../core/person';
+import {Person, IPerson} from '../core/person';
 import { Observable }        from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -10,11 +10,12 @@ import 'rxjs/add/operator/take';
 export class AuthService {
 
   private authState: FirebaseAuthState = null;
-  public user: any;
+  public currentUser: Person;
 
   constructor(private af: AngularFire, public auth$: FirebaseAuth) {
-    auth$.subscribe((state: FirebaseAuthState) => {
+    auth$.subscribe((state: any) => {
       this.authState = state;
+      this.currentUser = new Person(state.auth.uid, state.auth.displayName, state.auth.displayName, state.auth.photoURL)
     });
   }
 
@@ -37,8 +38,8 @@ export class AuthService {
     });
   }
 
-  public login() {
-    this.auth$.login()
+  public login(): firebase.Promise<any> {
+    return this.auth$.login()
       .then((user) => {
         this.saveUser(new Person(user.auth.uid, user.auth.displayName, user.auth.displayName, user.auth.photoURL))
       });

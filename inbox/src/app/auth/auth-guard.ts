@@ -16,9 +16,6 @@ export class AuthGuard implements CanActivate {
     return this.authService.auth$
       .take(1)
       .map(authState => {
-        // this.authService.setUser(authState);
-        console.log("Auth Service called", authState.uid);
-        this.authService.user = authState.uid;
         return !!authState })
       .do(authenticated => {
         if (!authenticated) {

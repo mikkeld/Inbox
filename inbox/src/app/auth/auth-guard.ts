@@ -15,7 +15,11 @@ export class AuthGuard implements CanActivate {
   canActivate(): Observable<boolean> {
     return this.authService.auth$
       .take(1)
-      .map(authState => !!authState)
+      .map(authState => {
+        // this.authService.setUser(authState);
+        console.log("Auth Service called", authState.uid);
+        this.authService.user = authState.uid;
+        return !!authState })
       .do(authenticated => {
         if (!authenticated) {
           this.router.navigate(['/compose']);

@@ -10,6 +10,7 @@ import 'rxjs/add/operator/take';
 export class AuthService {
 
   private authState: FirebaseAuthState = null;
+  public user: any;
 
   constructor(private af: AngularFire, public auth$: FirebaseAuth) {
     auth$.subscribe((state: FirebaseAuthState) => {

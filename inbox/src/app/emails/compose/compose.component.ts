@@ -48,7 +48,6 @@ export class ComposeComponent implements OnInit {
   }
 
   setReceiver(person: Person): void {
-    console.log(person);
     this.receiver = person;
   }
 

@@ -11,32 +11,33 @@ export class EmailService {
   private emails: FirebaseListObservable<IEmail[]>;
   private emailUserPath: string;
 
-  constructor(private af: AngularFire, authService: AuthService) {
+  constructor(private af: AngularFire, private authService: AuthService) {
     this.emailUserPath = `/emails/${authService.id}`;
   }
 
   composeEmail(title: string, content:string, receiver: IPerson): void {
+    console.log(this.authService.getUserInformation());
     let from = new Person('Imf4nFal01MofFYqOe9I8LcfhX22', "Mikkel", "Dengsøe", "https://lh6.googleusercontent.com/-D3ZhLQkij2I/AAAAAAAAAAI/AAAAAAAAAAA/AGNl-OownkmptDpN_QjXHaRV7DOhtCverw/s96-c/photo.jpg");
     let to = new Person(receiver.authId, receiver.firstName, receiver.lastName, receiver.profilePicturePath);
-    this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`)
+    this.af.database.list(this.emailUserPath)
       .push(new Email(to, from, Date.now(), content, title));
   }
 
   getAllEmails(): FirebaseListObservable<IEmail[]> {
-    return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`);
+    return this.af.database.list(this.emailUserPath);
   }
 
   getAllEmailsForRoute(route: string): FirebaseListObservable<IEmail[]> {
     switch(route) {
       case 'inbox':
-        return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`, {
+        return this.af.database.list(this.emailUserPath, {
           query: {
             orderByChild: 'timestamp'
           }
         });
 
       case 'starred':
-        return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22`, {
+        return this.af.database.list(this.emailUserPath, {
           query: {
             orderByChild: 'starred',
             equalTo: true
@@ -49,26 +50,26 @@ export class EmailService {
   }
 
   getEmail(key: string): FirebaseObjectObservable<Email> {
-    return this.af.database.object(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`);
+    return this.af.database.object(`${this.emailUserPath}/${key}`);
   }
 
   markAsImportant(email: IEmail): firebase.Promise<any> {
-    return this.af.database.object(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${email.$key}`)
+    return this.af.database.object(`${this.emailUserPath}/${email.$key}`)
       .update({ starred: !email.starred});
   }
 
   markAsRead(email: IEmail): firebase.Promise<any>  {
-    return this.af.database.object(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${email.$key}`)
+    return this.af.database.object(`${this.emailUserPath}/${email.$key}`)
       .update({ read: true })
   }
 
   addReply(reply: IReply, key: string) {
-    this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/${key}/replies`)
+    this.af.database.list(`${this.emailUserPath}/${key}/replies`)
       .push(reply)
   }
 
   unreadEmailCount(): any {
-    return this.af.database.list(`/emails/Imf4nFal01MofFYqOe9I8LcfhX22/`, {
+    return this.af.database.list(`${this.emailUserPath}`, {
       query: {
         orderByChild: 'read',
         equalTo: false

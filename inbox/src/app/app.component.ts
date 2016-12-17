@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private emailService: EmailService
+    // private emailService: EmailService
   ) { }
 
   unreadEmailCount: Observable<number>;
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.authService.getUserInformation();
-    this.unreadEmailCount = this.emailService.unreadEmailCount();
+    // this.unreadEmailCount = this.emailService.unreadEmailCount();
   }
 
   login() {

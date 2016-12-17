@@ -4,7 +4,7 @@ import {AuthGuard} from "./auth/auth-guard";
 import {UnauthGuard} from "./auth/unauth-guard";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/inbox', pathMatch: 'full', canActivate: [UnauthGuard] }
+  { path: '', redirectTo: '/inbox', pathMatch: 'full', canActivate: [AuthGuard] }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

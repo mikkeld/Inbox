@@ -7,14 +7,13 @@ import {AuthGuard} from '../auth/auth-guard';
 
 const routes: Routes = [
   { path: 'inbox',  component: InboxComponent, canActivate: [AuthGuard] },
-  { path: 'starred',  component: InboxComponent },
+  { path: 'starred',  component: InboxComponent, canActivate: [AuthGuard] },
   { path: 'compose',  component: ComposeComponent },
   { path: 'email/:id',  component: EmailDetailComponent }
 ];
 
 @NgModule({
   imports: [ RouterModule.forChild(routes) ],
-  providers: [AuthGuard],
   exports: [ RouterModule ]
 })
 

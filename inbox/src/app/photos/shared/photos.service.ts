@@ -4,34 +4,38 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 import {Observable} from "rxjs";
 import { IPhotoTag, PhotoTag } from '../shared/photo-tag';
 import 'rxjs/add/operator/toPromise';
+import {AuthService} from "../../auth/auth.service";
 
 @Injectable()
 export class PhotosService {
 
-  constructor(private af: AngularFire) {
+  private photoPath: string;
+
+  constructor(private af: AngularFire, private authService: AuthService) {
+    this.photoPath = `photos/${this.authService.id}`;
 
   }
 
   public createPhoto(photo: Photo): void {
-    this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
+    this.af.database.list(this.photoPath)
       .push(photo)
   }
 
   public getVisiblePhotos(filter: string): Observable<IPhoto[]> {
     if(filter) {
-      return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22')
+      return this.af.database.list(this.photoPath)
         .map(photos => photos.filter(photo => photo.tags.indexOf(filter) > -1));
     } else {
-      return this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22');
+      return this.af.database.list(this.photoPath);
     }
   }
 
   public getPhotoForKey(key: string): FirebaseObjectObservable<IPhoto> {
-    return this.af.database.object(`photos/Imf4nFal01MofFYqOe9I8LcfhX22/${key}`)
+    return this.af.database.object(`${this.photoPath}/${key}`)
   }
 
   public previousPhotoForKey(key: string): void {
-    this.af.database.list('photos/Imf4nFal01MofFYqOe9I8LcfhX22', {
+    this.af.database.list(this.photoPath, {
       query: {
         orderByChild: 'timestamp',
         startsAt: 1480588440474,

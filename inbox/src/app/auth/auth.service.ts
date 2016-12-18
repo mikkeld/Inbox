@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private af: AngularFire, public auth$: FirebaseAuth) {
     auth$.subscribe((state: any) => {
       this.authState = state;
-      this.currentUser = new Person(state.auth.uid, state.auth.displayName, state.auth.displayName, state.auth.photoURL)
+      this.currentUser = this.authState ? new Person(state.auth.uid, state.auth.displayName, state.auth.displayName, state.auth.photoURL) : null
     });
   }
 

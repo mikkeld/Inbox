@@ -11,8 +11,7 @@ export class SignInComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   public signIn(): void {
     this.authService.login()

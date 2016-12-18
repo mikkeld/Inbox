@@ -14,7 +14,7 @@ import {AuthService} from "../../auth/auth.service";
 export class InboxComponent implements OnInit {
 
   public emails: FirebaseListObservable<IEmail[]>;
-  path:string;
+  path: string;
 
   constructor(
     private router: Router,

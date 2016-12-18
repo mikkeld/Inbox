@@ -15,9 +15,7 @@ export class AppComponent implements OnInit {
   loading: boolean = true;
 
   constructor(
-    private authService: AuthService,
-    private router: Router
-  ) { }
+    private authService: AuthService) { }
 
   unreadEmailCount: Observable<number>;
   currentUser: Observable<Person>;
@@ -28,7 +26,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/']);
+    window.location.reload();
   }
 
 

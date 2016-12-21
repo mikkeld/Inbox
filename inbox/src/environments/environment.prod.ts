@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  uploadEndpoint: "google.cloudlthing.upload.com/post"
 };

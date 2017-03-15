@@ -5,6 +5,7 @@ A full stack copy of key features in the Inbox and Google Photos apps. The app f
 * [Angular App Structure](https://github.com/mikkeld/Inbox/tree/master/inbox/src)
 * [Node.js Structure](https://github.com/mikkeld/Inbox/tree/master/nodejs)
 
+- - - -
 
 * Angular2 4.0.0
 * Angular2 Router 3.2.0

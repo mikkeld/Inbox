@@ -2,6 +2,8 @@
 
 A full stack copy of key features in the Inbox and Google Photos apps. The app features a Firebase backend with OAuth authentication in addition to a Node.js backend handling the interaction with the Google Vision API and Google Cloud Storage.
 
+* [Angular App Structure](https://github.com/mikkeld/Inbox/tree/master/inbox/src)
+* [Node.js Structure](https://github.com/mikkeld/Inbox/tree/master/nodejs)
 
 
 * Angular2 4.0.0
